@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/dobros-design/static/css/main.002f291d.css",
+    "main.js": "/dobros-design/static/js/main.46b3d3ec.js",
+    "static/media/hero.jpg": "/dobros-design/static/media/hero.b6fc791d49b6f82a0a7e.jpg",
+    "index.html": "/dobros-design/index.html",
+    "main.002f291d.css.map": "/dobros-design/static/css/main.002f291d.css.map",
+    "main.46b3d3ec.js.map": "/dobros-design/static/js/main.46b3d3ec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.002f291d.css",
+    "static/js/main.46b3d3ec.js"
+  ]
+}
