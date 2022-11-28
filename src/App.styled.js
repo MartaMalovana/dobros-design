@@ -41,10 +41,17 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  min-height: 100vh;
 `;
 export const Content = styled.div`
-  max-width: 365px;
+  max-width: 400px;
   margin: 0 auto;
   outline: 1px solid red;
+  font-family: 'Montserrat'; 
+
 `;
 

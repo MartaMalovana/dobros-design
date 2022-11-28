@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import photo from '../../images/jpg/2.jpg';
 
 export const Container = styled.div`
     // background-color: black;
@@ -6,98 +7,64 @@ export const Container = styled.div`
 
 export const HeroBox = styled.section`
     position: relative;
-    width: 100%;
-    // background-color: #000;
-    padding: 0 0 0;
-`;
-
-export const Logo = styled.img`
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-`;
-
-export const Burger = styled.div`
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    top: 25px;
-    left: 15px;
-    background-color: white;
-
-    &::before,
-    &::after {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 100%;
-        left: 0;
-        background-color: white; 
-    }
-
-    &::before {
-        top: -7px;
-    }
-
-    &::after {
-        bottom: -7px;
-    }
-`;
-
-export const Photo = styled.img`
-    position: absolut;
-    // top: -100px;
-    width: 100%;
-    height: auto;
-    // margin-top: 30px;
-
-`;
-
-export const Title = styled.h1`
-    position: absolute;
-    left: 170px;
-    top: 17px;
-    width: 100%;
-    margin: 0px;
-    padding-left: 5px;
-    padding-right: 15px;
-    // text-align: right;
-    font-size: 20px;
-    font-family: 'Montserrat'; 
-    font-weight: 400;
-    // -webkit-background-clip: text;
-    // background-clip: text;
-    // background-image: linear-gradient(to right, rgba(255, 95, 31, 1), rgb(214,0,28));
-    color: white;
-    background-color: rgba(255, 255, 255, 0.3);
-
+    padding: 0 15px;
 `;
 
 export const Text = styled.p`
     position: absolute;
     right: 15px;
-    top: 46px;
-    width: 100%;
-    text-align: right;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    text-align: center;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-size: 16px;
     color: white;
-    font-family: 'Montserrat'; 
-    font-size: 10px;
+    margin: 10px 0;
 `;
 
-export const Text1 = styled.p`
+export const Title = styled.h1`
     position: absolute;
-    right: 15px;
-    top: 63px;
-    width: 100%;
-    text-align: right;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: white;
-    font-family: 'Montserrat'; 
-    font-size: 10px;
+    bottom: 15px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: max-content;
+    margin: 0px;
+    padding: 5px 10px;
+    font-size: 32px;
+    font-weight: 400;
+    background-color: rgba(255, 255, 255, 0.8);
+
 `;
 
+export const Photo = styled.img`
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+`;
+
+export const Button = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-image: url(${photo});
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: 0px;
+    box-shadow:  rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+`;
+
+
+export const Span = styled.div`
+    padding: 5px 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: rgba(255, 255, 255, 1);
+`
 
