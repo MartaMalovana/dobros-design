@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dobros-design/static/css/main.e3a8861b.css",
-    "main.js": "/dobros-design/static/js/main.918a9095.js",
+    "main.js": "/dobros-design/static/js/main.b03e3617.js",
     "static/media/011.jpg": "/dobros-design/static/media/011.d52b779363d3634b5a44.jpg",
     "static/media/020.jpg": "/dobros-design/static/media/020.699e967f0fc5c44f874e.jpg",
     "static/media/006.jpg": "/dobros-design/static/media/006.6bdba86ef1a75a4b0c20.jpg",
@@ -283,10 +283,10 @@
     "static/media/heart.svg": "/dobros-design/static/media/heart.f43f8224108188685227ed5f6f9c8435.svg",
     "static/media/heart-red.svg": "/dobros-design/static/media/heart-red.a2ba90f88964956452d868585ae01955.svg",
     "main.e3a8861b.css.map": "/dobros-design/static/css/main.e3a8861b.css.map",
-    "main.918a9095.js.map": "/dobros-design/static/js/main.918a9095.js.map"
+    "main.b03e3617.js.map": "/dobros-design/static/js/main.b03e3617.js.map"
   },
   "entrypoints": [
     "static/css/main.e3a8861b.css",
-    "static/js/main.918a9095.js"
+    "static/js/main.b03e3617.js"
   ]
 }
