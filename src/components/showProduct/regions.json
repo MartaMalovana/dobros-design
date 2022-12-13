@@ -1,0 +1,34 @@
+[
+    {
+        "name": "centralna",
+        "content": "Центральна Україна"
+    },
+    {
+        "name": "hutsulshchyna",
+        "content": "Гуцульщина"
+    },
+    {
+        "name": "zakarpattya",
+        "content": "Закарпаття"
+    },
+    {
+        "name": "bukovyna",
+        "content": "Буковина"
+    },
+    {
+        "name": "volyn",
+        "content": "Волинь"
+    },
+    {
+        "name": "opillya",
+        "content": "Опілля"
+    },
+    {
+        "name": "polissya",
+        "content": "Полісся"
+    },
+    {
+        "name": "pokuttya",
+        "content": "Покуття"
+    }
+]

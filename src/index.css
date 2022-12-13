@@ -18,8 +18,13 @@ p {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
   cursor: pointer;
+}
+
+ul {
+  list-style: none;
 }

@@ -1,0 +1,1 @@
+export const hutsulshchyna = state => state.hutsulshchyna;

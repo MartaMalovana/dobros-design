@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 import close from '../../images/svg/close.svg';
+import heart from '../../images/svg/heart.svg';
 
 export const Container = styled.div`
     position: relative;
+    box-shadow: 0 5px 20px -10px #000;
     
-    &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: black;
-    }
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 2px;
+    //     background-color: black;
+    // }
 `;
 
 export const HeaderBox = styled.header`
@@ -88,15 +90,15 @@ export const Menu = styled.nav`
     align-items: center;
     justify-content: center;
     background-color: white;
-    z-index: 1;
+    z-index: 1000;
 `;
 
 export const MenuClose = styled.button`
     position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 30px;
-    height: 30px;
+    top: ${props => props.slider ? "10px" : "30px"};
+    right: ${props => props.slider ? "10px" : "30px"};
+    width: ${props => props.slider ? "20px" : "30px"};
+    height: ${props => props.slider ? "20px" : "30px"};
     padding:0;
     border: none;
     background-size: 30px 30px;
@@ -119,7 +121,25 @@ export const StyledLink = styled(NavLink)`
 
 export const MenuItem = styled.li`
     position: relative;
-    margin-bottom: 40px;
+    margin: 20px 0;
     text-align: center;
+`;
+
+export const MenuItemHeart = styled(MenuItem)`
+    position: relative;
+    // padding-left: 25px;
+    // padding-right: 10px;
+
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     left: 5px;
+    //     top: 50%;
+    //     transform: translateY(-50%);
+    //     width: 15px;
+    //     height: 15px;
+    //     background-image: url(${heart});
+        
+    // };
 `;
 

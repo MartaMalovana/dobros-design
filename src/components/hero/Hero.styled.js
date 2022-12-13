@@ -7,13 +7,13 @@ export const Container = styled.div`
 
 export const HeroBox = styled.section`
     position: relative;
-    padding: 0 15px;
+    padding: 0 15px 10px;
 `;
 
 export const Text = styled.p`
     position: absolute;
     right: 15px;
-    top: 15px;
+    top: 25px;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
@@ -26,23 +26,24 @@ export const Text = styled.p`
 `;
 
 export const Title = styled.h1`
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translatex(-50%);
+    position: relative;
+    // bottom: 15px;
+    // left: 50%;
+    // transform: translatex(-50%);
     width: max-content;
-    margin: 0px;
+    margin: 0px auto;
     padding: 5px 10px;
     font-size: 32px;
     font-weight: 400;
-    background-color: rgba(255, 255, 255, 0.8);
+    line-height: 50px;
+    // background-color: rgba(255, 255, 255, 0.8);
 
 `;
 
 export const Photo = styled.img`
     width: 100%;
     height: auto;
-    margin-top: 15px;
+    margin: 20px 0 10px;
 `;
 
 export const Button = styled.button`
@@ -66,5 +67,41 @@ export const Span = styled.div`
     font-weight: bold;
     letter-spacing: 2px;
     background-color: rgba(255, 255, 255, 1);
-`
+`;
 
+export const About = styled.p`
+    text-align: center;
+    margin: 10px 0 10px;
+`;
+
+export const ProposesTitle = styled.h2`
+    font-weight: 400;
+    text-align: center;
+    margin: 10px 0 0;
+`;
+
+export const ProposesList = styled.ul`
+    margin: 10px 0 20px;
+`;
+
+export const Propose = styled.li`
+    position: relative;    
+    margin-bottom: 10px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: black;
+        transform: rotate(45deg) translate(-50%, -50%);
+        top: 11px;
+        left: -15px;
+    
+    }
+`;
+
+export const P = styled.p`
+    margin-bottom: 15px;
+    text-align: center;
+`;

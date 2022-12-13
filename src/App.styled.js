@@ -49,9 +49,10 @@ export const Wrapper = styled.div`
 `;
 export const Content = styled.div`
   max-width: 400px;
+  min-height: ${props => props.empty ? "500px" : "auto"};
   margin: 0 auto;
-  outline: 1px solid red;
+  // outline: 1px solid red;
   font-family: 'Montserrat'; 
-
+  overflow: hidden;
 `;
 

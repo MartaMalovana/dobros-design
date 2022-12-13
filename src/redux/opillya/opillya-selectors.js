@@ -1,0 +1,1 @@
+export const opillya = state => state.opillya;

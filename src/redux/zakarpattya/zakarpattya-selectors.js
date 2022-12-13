@@ -1,0 +1,1 @@
+export const zakarpattya = state => state.zakarpattya;

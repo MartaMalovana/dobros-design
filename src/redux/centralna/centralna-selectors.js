@@ -1,0 +1,1 @@
+export const centralna = state => state.centralna;
