@@ -1,0 +1,1 @@
+export const svit = state => state.svit;

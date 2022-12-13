@@ -1,0 +1,1 @@
+export const podillya = state => state.podillya;

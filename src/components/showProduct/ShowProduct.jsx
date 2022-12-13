@@ -14,9 +14,11 @@ import {volyn} from '../../redux/volyn/volyn-selectors';
 import {zakarpattya} from '../../redux/zakarpattya/zakarpattya-selectors';
 import {saved} from '../../redux/saved/saved.selectors';
 import { slider } from "../../redux/slider/slider-selectors";
+import {svit} from "../../redux/svit/svit-selectors";
 import sliderActions from '../../redux/slider/slider-actions';
 import { useEffect } from "react";
 import { render } from "@testing-library/react";
+import {podillya} from '../../redux/podillya/podillya-selectors';
 
 export default function ShowProduct() {
   const [menu, setMenu] = useState(true);
@@ -33,6 +35,8 @@ export default function ShowProduct() {
   const opillyaData = useSelector(opillya);
   const volynData = useSelector(volyn);
   const zakarpattyaData = useSelector(zakarpattya);
+  const podillyaData = useSelector(podillya);
+  const svitData = useSelector(svit);
   const savedData = useSelector(saved);
   const showSlider = useSelector(slider);
   const dispatch = useDispatch();
@@ -81,6 +85,14 @@ export default function ShowProduct() {
       case 'zakarpattya':
         setCategoryTitle('Закарпаття');
         setRenderData(zakarpattyaData);
+          break;
+      case 'podillya':
+        setCategoryTitle('Поділля');
+        setRenderData(podillyaData);
+          break;
+      case 'svit':
+        setCategoryTitle('Костюми народів світу');
+        setRenderData(svitData);
           break;
       case 'saved': 
       // const allProducts = [...bukovynaData,...centralnaData,...hutsulshchynaData,...opillyaData,...volynData,...zakarpattyaData];
@@ -154,7 +166,7 @@ export default function ShowProduct() {
               <ProductButton>Стилізований одяг</ProductButton>
             </ProductCategory>
             <ProductCategory>
-              <ProductButton>Костюми народів світу</ProductButton>
+              <ProductButton name="svit">Костюми народів світу</ProductButton>
             </ProductCategory>
           </ProductList>
         </Navigation>
