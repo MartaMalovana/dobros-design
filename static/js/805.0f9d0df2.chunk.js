@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdobros_design=self.webpackChunkdobros_design||[]).push([[805],{69805:function(n,e,u){u.r(e),u.d(e,{default:function(){return s}});var r=u(80184);function s(){return(0,r.jsx)("p",{children:"not found"})}}}]);
+//# sourceMappingURL=805.0f9d0df2.chunk.js.map
