@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/dobros-design/static/css/main.0a56abd6.css",
-    "main.js": "/dobros-design/static/js/main.d1a924aa.js",
+    "main.js": "/dobros-design/static/js/main.f349db5e.js",
     "static/js/800.6ca0551c.chunk.js": "/dobros-design/static/js/800.6ca0551c.chunk.js",
-    "static/js/35.b65acf16.chunk.js": "/dobros-design/static/js/35.b65acf16.chunk.js",
+    "static/js/35.bc13cd43.chunk.js": "/dobros-design/static/js/35.bc13cd43.chunk.js",
     "static/js/822.4ae257bb.chunk.js": "/dobros-design/static/js/822.4ae257bb.chunk.js",
     "static/js/625.5ce53754.chunk.js": "/dobros-design/static/js/625.5ce53754.chunk.js",
     "static/js/307.2f75bd71.chunk.js": "/dobros-design/static/js/307.2f75bd71.chunk.js",
@@ -285,9 +285,9 @@
     "static/media/close1.svg": "/dobros-design/static/media/close1.12b13cd0077bcc1a5a844bdcf6bd7586.svg",
     "static/media/aa.svg": "/dobros-design/static/media/aa.c752134324f3086a8404f0346ec38f37.svg",
     "main.0a56abd6.css.map": "/dobros-design/static/css/main.0a56abd6.css.map",
-    "main.d1a924aa.js.map": "/dobros-design/static/js/main.d1a924aa.js.map",
+    "main.f349db5e.js.map": "/dobros-design/static/js/main.f349db5e.js.map",
     "800.6ca0551c.chunk.js.map": "/dobros-design/static/js/800.6ca0551c.chunk.js.map",
-    "35.b65acf16.chunk.js.map": "/dobros-design/static/js/35.b65acf16.chunk.js.map",
+    "35.bc13cd43.chunk.js.map": "/dobros-design/static/js/35.bc13cd43.chunk.js.map",
     "822.4ae257bb.chunk.js.map": "/dobros-design/static/js/822.4ae257bb.chunk.js.map",
     "625.5ce53754.chunk.js.map": "/dobros-design/static/js/625.5ce53754.chunk.js.map",
     "307.2f75bd71.chunk.js.map": "/dobros-design/static/js/307.2f75bd71.chunk.js.map",
@@ -299,6 +299,6 @@
   },
   "entrypoints": [
     "static/css/main.0a56abd6.css",
-    "static/js/main.d1a924aa.js"
+    "static/js/main.f349db5e.js"
   ]
 }
