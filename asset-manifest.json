@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dobros-design/static/css/main.0a56abd6.css",
-    "main.js": "/dobros-design/static/js/main.f349db5e.js",
+    "main.js": "/dobros-design/static/js/main.b9298949.js",
     "static/js/800.6ca0551c.chunk.js": "/dobros-design/static/js/800.6ca0551c.chunk.js",
     "static/js/35.bc13cd43.chunk.js": "/dobros-design/static/js/35.bc13cd43.chunk.js",
     "static/js/822.4ae257bb.chunk.js": "/dobros-design/static/js/822.4ae257bb.chunk.js",
@@ -276,8 +276,8 @@
     "static/media/instagram.svg": "/dobros-design/static/media/instagram.d37acdd3974dacaf3e481b89c513d92d.svg",
     "static/media/facebook.svg": "/dobros-design/static/media/facebook.80b8aa4633adfbca5a1994163ed88392.svg",
     "static/media/cross.svg": "/dobros-design/static/media/cross.d6dfaa5f309ee53126087629ba539e44.svg",
-    "static/media/info.svg": "/dobros-design/static/media/info.6331a3775b156db9cc3583ddc203d5df.svg",
     "index.html": "/dobros-design/index.html",
+    "static/media/info.svg": "/dobros-design/static/media/info.6331a3775b156db9cc3583ddc203d5df.svg",
     "static/media/up.svg": "/dobros-design/static/media/up.8327b3a858ce6746fa4db786169c4bdb.svg",
     "static/media/arrow-slider.svg": "/dobros-design/static/media/arrow-slider.9f763eccdc9cd8e5abbb492485c69d87.svg",
     "static/media/heart.svg": "/dobros-design/static/media/heart.f43f8224108188685227ed5f6f9c8435.svg",
@@ -285,7 +285,7 @@
     "static/media/close1.svg": "/dobros-design/static/media/close1.12b13cd0077bcc1a5a844bdcf6bd7586.svg",
     "static/media/aa.svg": "/dobros-design/static/media/aa.c752134324f3086a8404f0346ec38f37.svg",
     "main.0a56abd6.css.map": "/dobros-design/static/css/main.0a56abd6.css.map",
-    "main.f349db5e.js.map": "/dobros-design/static/js/main.f349db5e.js.map",
+    "main.b9298949.js.map": "/dobros-design/static/js/main.b9298949.js.map",
     "800.6ca0551c.chunk.js.map": "/dobros-design/static/js/800.6ca0551c.chunk.js.map",
     "35.bc13cd43.chunk.js.map": "/dobros-design/static/js/35.bc13cd43.chunk.js.map",
     "822.4ae257bb.chunk.js.map": "/dobros-design/static/js/822.4ae257bb.chunk.js.map",
@@ -299,6 +299,6 @@
   },
   "entrypoints": [
     "static/css/main.0a56abd6.css",
-    "static/js/main.f349db5e.js"
+    "static/js/main.b9298949.js"
   ]
 }
