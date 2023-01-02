@@ -48,11 +48,27 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 `;
 export const Content = styled.div`
+  position: relative;
+  display: ${props => props.contacts && "flex"};
+  align-items: ${props => props.contacts && "center"};
+  justify-content: ${props => props.contacts && "center"};
   max-width: 400px;
-  min-height: ${props => props.empty ? "500px" : "auto"};
+  min-height: ${props => props.empty ? "550px" : "auto"};
   margin: 0 auto;
   // outline: 1px solid red;
   font-family: 'Montserrat'; 
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    position: ${props => props.tablet && "relative"};
+    min-height: ${props => props.empty ? "620px" : "auto"};
+
+  }
+
+  @media screen and (min-width: 1000px) {
+    max-width: 1000px;
+    min-height: ${props => props.empty ? "750px" : "auto"};
+  }
 `;
 

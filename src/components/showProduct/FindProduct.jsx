@@ -1,20 +1,27 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import {SearchContainer, Form, Number, Select, Option, Label, LabelSelect, Input, ButtonSubmit, Result, Underline} from './FindProduct.styled';
-import { CardContainer,  CardBox, Product, ProductRegion, Heart} from './ShowProduct.styled';
+import { CardContainer,  Card, Product, ProductRegion, Heart} from './ShowProduct.styled';
 import getRegionData from './getRegionData';
 import saveProduct from './saveProduct';
 import ProductCard from '../productCard/ProductCard';
+import { useEffect } from 'react';
+import {slider} from '../../redux/slider/slider-selectors';
+import sliderActions from '../../redux/slider/slider-actions';
+// import { allProducts } from '../../redux/saved/saved.selectors';
 
-export default function FindProduct () {
+export default function FindProduct ({newData}) {
     const [renderData, setRenderData] = useState(null);
+    const [slide, setSlide] = useState(0);
     const allstate = useSelector(state => state);
+    const showSlider = useSelector(slider);
 
     const find = (e) => {
         e.preventDefault();
         const data = getRegionData(e.currentTarget.category.value, allstate);
         const products = data.filter(el => el.number.includes(e.currentTarget.number.value));
-        setRenderData(products);
+        // setRenderData(products);
+        newData(products);
     };
     
     return (
@@ -39,17 +46,18 @@ export default function FindProduct () {
             </Form>
             <CardContainer>
                 {renderData &&
-                    renderData.map((el) => {
+                    renderData.map((el, index) => {
                     return (
-                        <ProductCard key={el.id} one>
-                        <ProductRegion>{el.regionUkr} </ProductRegion>
-                        <Product
-                            src={require(`../../images/jpg/costumes/${el.preview}`)}
-                        />
-                        </ProductCard>
-                        
+                        // <Card key={el.id} one title index={index}>
+                        // <ProductRegion>{el.regionUkr} </ProductRegion>
+                        // <Product
+                        //     src={require(`../../images/jpg/costumes/${el.preview}`)}
+                        // />
+                        // </Card>  
+                        <ProductCard data={el} title index={index} />
                     );
                     })}
+                    {/* {showSlider && <MySlider data={renderData} slider={closeSlider} slide={slide} changeElement={changeElement}/>} */}
             </CardContainer>
         </SearchContainer>
     );

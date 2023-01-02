@@ -1,0 +1,1 @@
+export const golovniUbory = state => state.golovniUbory;

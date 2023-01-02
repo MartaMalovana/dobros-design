@@ -1,7 +1,8 @@
 [
     {
         "name": "centralna",
-        "content": "Центральна Україна"
+        "content": "Центральна Україна",
+        "children": "centralna-children"
     },
     {
         "name": "hutsulshchyna",

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
-import close from '../../images/svg/close.svg';
+// import close from '../../images/svg/close.svg';
 import heart from '../../images/svg/heart.svg';
-
+import close from '../../images/svg/close1.svg';
 export const Container = styled.div`
     position: relative;
     box-shadow: 0 5px 20px -10px #000;
@@ -23,12 +23,24 @@ export const HeaderBox = styled.header`
     justify-content: space-between;
     margin: 0;
     padding: 10px 15px;
+
+    @media screen and (min-width: 1000px) {
+        display: ${props => props.desktop && "none"};
+        padding: 10px 5px;
+    }
 `;
 
 export const Logo = styled.img`
     width: 30px;
     height: 30px;
     object-fit: contain;
+
+    @media screen and (min-width: 1000px) {
+        width: 40px;
+        height: 40px;
+
+        }    
+
 `;
 
 export const Phone = styled.a`
@@ -52,6 +64,11 @@ export const BurgerButton = styled.button`
     &:focus {
         background-color: rgb(255,184,28);
     }
+
+    @media screen and (min-width: 768px) {
+        display: none;
+      }
+    
 `;
 
 export const Burger = styled.div`
@@ -95,20 +112,35 @@ export const Menu = styled.nav`
 
 export const MenuClose = styled.button`
     position: absolute;
-    top: ${props => props.slider ? "10px" : "30px"};
-    right: ${props => props.slider ? "10px" : "30px"};
-    width: ${props => props.slider ? "20px" : "30px"};
-    height: ${props => props.slider ? "20px" : "30px"};
+    top: ${props => props.slider ? "-50px" : "50px"};
+    right: ${props => props.slider ? "0px" : "50px"};
+    width: 30px;
+    height: 30px;
     padding:0;
-    border: none;
-    background-size: 30px 30px;
+    border: 2px solid black;
     background: url(${close}) no-repeat 50% 50%;
+
+    
 `;
 export const MenuList = styled.ul`
   padding: 0;
   font-size: 20px;
 //   text-transform: uppercase;
   list-style: none;
+  display: ${props => props.tablet && "none"};
+
+  @media screen and (min-width: 768px) {
+    display:  ${props => props.desktop ? "none" : "flex"};
+    margin: 10px 0;
+  }
+
+  @media screen and (min-width: 1000px) {
+    position: absolute;
+    display:  ${props => props.desktop &&  "flex"};
+    top: ${props => props.desktop ? "20px" : "10px"};
+    right: ${props => props.desktop ? "15px" : "5px"};
+  }
+
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -117,12 +149,28 @@ export const StyledLink = styled(NavLink)`
     &.active {
         color: rgb(250,70,22);
     }
+
+    @media screen and (min-width: 1000px) {
+        color: ${props => props.desktop && "white"};    
+    }
+
 `;
 
 export const MenuItem = styled.li`
     position: relative;
-    margin: 20px 0;
+    margin: ${props => props.tablet ? "10px 0 10px 20px" : "20px 0"};
     text-align: center;
+    transition-property: color;
+    transition-duration: 300ms;
+
+    &:hover {
+        color: rgb(255,184,28);
+    }
+
+    @media screen and (min-width: 768px) {
+        margin: 0 0 0 25px;
+    }
+
 `;
 
 export const MenuItemHeart = styled(MenuItem)`

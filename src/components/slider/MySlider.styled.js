@@ -16,9 +16,14 @@ export const Div = styled.div`
 
 export const Div1 = styled.div`
     position: relative;
-    max-width: 300px;
+    width: 100%;
+    margin: 60px 40px;
     background-color: white;
     // outline: 1px solid red;
+
+    @media screen and (min-width: 400px) {
+        max-width: 300px;
+    }
 `;
 
 export const PrevArrow = styled.button`

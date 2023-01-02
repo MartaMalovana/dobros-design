@@ -1,0 +1,1 @@
+export const vzuttya = state => state.vzuttya;

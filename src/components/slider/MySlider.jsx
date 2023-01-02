@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import {Div, Div1, PrevArrow, NextArrow} from './MySlider.styled';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "../productCard/ProductCard";
 import { MenuClose } from "../header/Header.styled";
 import { useEffect } from "react";
@@ -40,11 +38,11 @@ export default function MySlider ({data, slide, slider, changeElement}) {
     return (
       <Div>
         <Div1>
-          <ProductCard data={data[slideIndex]} key={data[slideIndex].id} title changeCurrentSlide={changeCurrentSlide}/>
+          <ProductCard data={data[slideIndex]} key={data[slideIndex].id} title sliderSize changeCurrentSlide={changeCurrentSlide}/>
           {slideIndex > 0 && <PrevArrow onClick={showPrev}/>}
           {slideIndex < (data.length - 1) && <NextArrow onClick={showNext}/>}
-        </Div1>
           <MenuClose onClick={closeSlider} slider/>
+        </Div1>
       </Div>
     );
   

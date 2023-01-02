@@ -4,6 +4,10 @@ import centralnaActions from "../../redux/centralna/centralna-actions";
 import opillyaActions from "../../redux/opillya/opillya-actions";
 import volynActions from "../../redux/volyn/volyn-actions";
 import zakarpattyaActions from "../../redux/zakarpattya/zakarpattya-actions";
+import podillyaActions from '../../redux/podillya/podillya-actions';
+import svitActions from '../../redux/svit/svit-actions';
+import golovniUboryActions from '../../redux/golovni-ubory/golovni-actions';
+import vzuttyaActions from '../../redux/vzuttya/vzuttya-actions';
 
 export default function getAction (region) {
     let action = null;
@@ -25,6 +29,18 @@ export default function getAction (region) {
           break;
         case 'zakarpattya':
           action = zakarpattyaActions.zakarpattyaChangeSaved;
+          break;
+        case 'podillya':
+          action = podillyaActions.podillyaChangeSaved;
+          break;
+        case 'svit':
+          action = svitActions.svitChangeSaved;
+          break;
+        case 'golovni-ubory':
+          action = golovniUboryActions.golovniChangeSaved;
+          break;
+        case 'vzuttya':
+          action = vzuttyaActions.vzuttyaChangeSaved;
           break;
         default: break;
       };

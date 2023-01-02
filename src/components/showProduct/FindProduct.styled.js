@@ -3,6 +3,10 @@ import {Button} from './ShowProduct.styled';
 
 export const SearchContainer = styled.div`
     margin: 15px;
+
+    @media screen and (min-width: 768px) {
+        margin: 0;
+    }
 `;
 
 export const Form = styled.form`
@@ -76,6 +80,7 @@ export const Option = styled.option`
 export const ButtonSubmit = styled(Button)`
     // height: 20px;
     margin: 0 auto;
+    
 `;
 
 export const Result = styled.div`

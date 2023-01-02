@@ -6,8 +6,8 @@ import { Wrapper } from "../App.styled";
 export default function Home () {
     return (
         <Wrapper>
-          <Header />
-          <Hero />
+          <Header desktop/>
+          <Hero desktop/>
           <Footer />
         </Wrapper>
       );    

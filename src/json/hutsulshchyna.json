@@ -180,24 +180,6 @@
         "saved": "false"
     },
     {
-        "id": "153",
-        "number": "021",
-        "region": "hutsulshchyna",
-        "regionUkr": "Гуцульщина",
-        "photo": "hutsulshchyna/768/021.jpg",
-        "preview": "hutsulshchyna/263/021.jpg",
-        "saved": "false"
-    },
-    {
-        "id": "154",
-        "number": "022",
-        "region": "hutsulshchyna",
-        "regionUkr": "Гуцульщина",
-        "photo": "hutsulshchyna/768/022.jpg",
-        "preview": "hutsulshchyna/263/022.jpg",
-        "saved": "false"
-    },
-    {
         "id": "155",
         "number": "023",
         "region": "hutsulshchyna",
@@ -207,30 +189,12 @@
         "saved": "false"
     },
     {
-        "id": "156",
-        "number": "024",
-        "region": "hutsulshchyna",
-        "regionUkr": "Гуцульщина",
-        "photo": "hutsulshchyna/768/024.jpg",
-        "preview": "hutsulshchyna/263/024.jpg",
-        "saved": "false"
-    },
-    {
         "id": "157",
         "number": "025",
         "region": "hutsulshchyna",
         "regionUkr": "Гуцульщина",
         "photo": "hutsulshchyna/768/025.jpg",
         "preview": "hutsulshchyna/263/025.jpg",
-        "saved": "false"
-    },
-    {
-        "id": "158",
-        "number": "026",
-        "region": "hutsulshchyna",
-        "regionUkr": "Гуцульщина",
-        "photo": "hutsulshchyna/768/026.jpg",
-        "preview": "hutsulshchyna/263/026.jpg",
         "saved": "false"
     }
 ]

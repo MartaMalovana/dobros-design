@@ -27,5 +27,6 @@ export default function getRegionData(choosenRegion, state) {
             data = null;
             break;
     };
+
     return data;
 };

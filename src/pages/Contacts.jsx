@@ -7,7 +7,7 @@ export default function Contacts () {
     return (
         <Wrapper>
             <Header />
-                <ContactPage />
+            <ContactPage />
             <Footer />
         </Wrapper>
     );
