@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { InView, useInView } from 'react-intersection-observer';
-
+import i18next from "i18next";
 import {Card, Title, Product, Skeleton, SkeletonMessage, ProductRegion, Heart} from '../showProduct/ShowProduct.styled';
 import saveProduct from "../showProduct/saveProduct";
 import saved from '../../redux/saved/saved.selectors';
@@ -54,7 +54,7 @@ export default function ProductCard({data, title, slider, index, slide, changeCu
   return (
     <>
             <Card onClick={openSlider} ref={ref} desktop={saved && "true"}>
-              {title && <ProductRegion>{renderData.regionUkr}</ProductRegion>}
+              {title && <ProductRegion>{i18next.language === 'ua' ? renderData.regionUkr : renderData.regionEng}</ProductRegion>}
               {inView ? <><Product sliderSize={sliderSize ? "true" : "false"} src={require(`../../images/jpg/costumes/${sliderSize ? renderData.photo : renderData.preview}`)} />
               <Heart
                 onClick={save}

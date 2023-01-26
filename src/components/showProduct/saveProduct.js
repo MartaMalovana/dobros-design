@@ -4,13 +4,12 @@ import hutsulshchyna from '../../json/hutsulshchyna.json';
 import opillya from '../../json/opillya.json';
 import volyn from '../../json/volyn.json';
 import zakarpattya from '../../json/zakarpattya.json';
-import saved from '../../json/saved.json';
 import getRegionData from './getRegionData';
 
 export default function saveProduct (id, data) {
-    const {bukovyna, centralna, hutsulshchyna, opillya, volyn, zakarpattya, podillya, golovniUbory, svit, vzuttya} = data;
+    const {bukovyna, centralna, hutsulshchyna, opillya, volyn, zakarpattya, podillya, golovniUbory, svit, vzuttya, stylizovanaCentralna, rushnyky, kozhuhy, rizne} = data;
     //Find product
-    const allProducts = [...bukovyna, ...centralna, ...hutsulshchyna, ...opillya, ...volyn, ...zakarpattya,...podillya,...golovniUbory,...svit,...vzuttya];
+    const allProducts = [...bukovyna, ...centralna, ...hutsulshchyna, ...opillya, ...volyn, ...zakarpattya,...podillya,...golovniUbory,...svit,...vzuttya,...stylizovanaCentralna,...rushnyky,...kozhuhy,...rizne];
     const product = allProducts.find(product => product.id === id);
     //Check is it saved by user. If not - add, if yes - delete it from json
     // if(product.saved === 'false') {

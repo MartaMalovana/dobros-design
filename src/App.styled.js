@@ -53,7 +53,7 @@ export const Content = styled.div`
   align-items: ${props => props.contacts && "center"};
   justify-content: ${props => props.contacts && "center"};
   max-width: 400px;
-  min-height: ${props => props.empty ? "550px" : "auto"};
+  min-height: ${props => props.empty ? "660px" : "auto"};
   margin: 0 auto;
   // outline: 1px solid red;
   font-family: 'Montserrat'; 
@@ -62,13 +62,13 @@ export const Content = styled.div`
   @media screen and (min-width: 768px) {
     max-width: 768px;
     position: ${props => props.tablet && "relative"};
-    min-height: ${props => props.empty ? "620px" : "auto"};
+    min-height: ${props => props.empty ? "750px" : "auto"};
 
   }
 
   @media screen and (min-width: 1000px) {
     max-width: 1000px;
-    min-height: ${props => props.empty ? "750px" : "auto"};
+    min-height: ${props => props.empty ? "870px" : "auto"};
   }
 `;
 

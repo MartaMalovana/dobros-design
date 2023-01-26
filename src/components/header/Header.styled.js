@@ -43,6 +43,30 @@ export const Logo = styled.img`
 
 `;
 
+export const Languages = styled.div`
+    display: ${props => props.position === 'true' && 'none'};
+    margin: 0 auto 0 10px;
+
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        left: 50px;
+      }
+
+    @media screen and (min-width: 1000px) {
+        display: ${props => props.position === 'true' && 'block'};;
+        left: ${props => props.position === 'true' && '70px'};
+        top: ${props => props.position === 'true' && '30px'};
+    }
+`;
+
+export const LangButton = styled.button`
+    background-color: ${props => props.active === 'true' ? 'rgb(255,184,28)' : 'transparent'};
+    border: none;
+    padding: 3px 5px;
+    font-weight: ${props => props.active === 'true' ? 'bold' : 'normal'};
+    color: ${props => props.position === 'true' && 'white'};
+`;
+
 export const Phone = styled.a`
     color: black;
     font-weight: 400;
@@ -120,6 +144,10 @@ export const MenuClose = styled.button`
     border: 2px solid black;
     background: url(${close}) no-repeat 50% 50%;
 
+    @media screen and (min-width: 768px) {
+        top: 0;
+        right: -50px;
+      }    
     
 `;
 export const MenuList = styled.ul`
@@ -169,8 +197,12 @@ export const MenuItem = styled.li`
 
     @media screen and (min-width: 768px) {
         margin: 0 0 0 25px;
+        font-size: 18px;
     }
 
+    @media screen and (min-width: 1000px) {
+        font-size: 20px;
+    }
 `;
 
 export const MenuItemHeart = styled(MenuItem)`

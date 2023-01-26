@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import photo from '../../images/jpg/2.jpg';
 import hero from '../../images/jpg/hero.jpg';
 import heroTablet from '../../images/jpg/hero-tablet.jpg';
 import heroDesktop from '../../images/jpg/hero-desktop.jpg';
@@ -157,20 +156,20 @@ export const Photo = styled.div`
 
 `;
 
-export const Button = styled.button`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 50px;
-    margin: 10px auto;
-    padding: 10px 20px;
-    background-image: url(${photo});
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    border: 0px;
-    box-shadow:  rgba(0, 0, 0, 0.35) 0px 5px 15px;;
-`;
+// export const Button = styled.button`
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 150px;
+//     height: 50px;
+//     margin: 10px auto;
+//     padding: 10px 20px;
+//     background-image: url(${photo});
+//     background-position: 50% 50%;
+//     background-repeat: no-repeat;
+//     border: 0px;
+//     box-shadow:  rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+// `;
 
 
 export const Span = styled.div`
@@ -309,7 +308,8 @@ export const OrderTitle = styled(P)`
     text-align: center;
     margin: 10px auto 20px;
     text-decoration: underline;
-
+    font-weight: 600;
+    
     @media screen and (min-width: 1000px) {
         display: block;
         margin-top: 50px;

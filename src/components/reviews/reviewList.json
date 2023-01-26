@@ -1,12 +1,20 @@
 [
     {
         "title": "КМАТ імені Сержа Лифаря",
+        "titleEng": "Serge Lyfar Kyiv Municipal Academy of Dance",
         "photo": "1.jpg",
         "id": "1"
     },
     {
         "title": "КМАТ імені Сержа Лифаря",
+        "titleEng": "Serge Lyfar Kyiv Municipal Academy of Dance",
         "photo": "2.jpg",
         "id": "2"
+    },
+    {
+        "title": "Український Танцювальний Ансамбль Чикаго Hromovytsia",
+        "titleEng": "Hromovytsia Ukrainian Dance Ensemble of Chicago",
+        "photo": "3.jpg",
+        "id": "3"
     }
 ]

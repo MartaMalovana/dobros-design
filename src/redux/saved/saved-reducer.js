@@ -3,7 +3,6 @@ import actions from './saved-actions';
 
 const saved = createReducer([], builder => {
     builder.addCase(actions.savedAdd, (state, {payload}) => {
-        console.log(state);
         if(!state.find(el => el.id === payload.id)) state.push(payload); 
         return state;
     });

@@ -4,6 +4,9 @@
         "number": "001",
         "region": "opillya",
         "regionUkr": "Опілля",
+        "regionEng": "Opillia region",
+        "categoryUkr": "Опілля",
+        "categoryEng": "Opillia region",
         "photo": "opillya/768/001.jpg",
         "preview": "opillya/263/001.jpg",
         "saved": "false"
@@ -13,6 +16,9 @@
         "number": "002",
         "region": "opillya",
         "regionUkr": "Опілля",
+        "regionEng": "Opillia region",
+        "categoryUkr": "Опілля",
+        "categoryEng": "Opillia region",
         "photo": "opillya/768/002.jpg",
         "preview": "opillya/263/002.jpg",
         "saved": "false"
@@ -22,6 +28,9 @@
         "number": "003",
         "region": "opillya",
         "regionUkr": "Опілля",
+        "regionEng": "Opillia region",
+        "categoryUkr": "Опілля",
+        "categoryEng": "Opillia region",
         "photo": "opillya/768/003.jpg",
         "preview": "opillya/263/003.jpg",
         "saved": "false"
@@ -31,6 +40,9 @@
         "number": "004",
         "region": "opillya",
         "regionUkr": "Опілля",
+        "regionEng": "Opillia region",
+        "categoryUkr": "Опілля",
+        "categoryEng": "Opillia region",
         "photo": "opillya/768/004.jpg",
         "preview": "opillya/263/004.jpg",
         "saved": "false"
@@ -40,6 +52,9 @@
         "number": "907",
         "region": "opillya",
         "regionUkr": "Опілля",
+        "regionEng": "Opillia region",
+        "categoryUkr": "Опілля",
+        "categoryEng": "Opillia region",
         "photo": "opillya/768/907.jpg",
         "preview": "opillya/263/907.jpg",
         "saved": "false"

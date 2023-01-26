@@ -22,7 +22,8 @@ export const Div1 = styled.div`
     // outline: 1px solid red;
 
     @media screen and (min-width: 400px) {
-        max-width: 300px;
+        // max-width: 300px;
+        width: auto;
     }
 `;
 

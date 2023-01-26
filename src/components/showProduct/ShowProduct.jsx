@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Trans, useTranslation } from "react-i18next";
 import { Content } from "../../App.styled";
 import {
   Container,
@@ -19,7 +20,8 @@ import {
   Title,
   DescriptionHeart,
   Desktop,
-  DesktopDecor
+  DesktopDecor,
+  Span
 } from "./ShowProduct.styled";
 import ProductCard from "../productCard/ProductCard";
 import regions from "./regions.json";
@@ -27,6 +29,7 @@ import FindProduct from "./FindProduct";
 import MySlider from "../slider/MySlider";
 import { bukovyna } from "../../redux/bukovyna/bukovyna-selectors";
 import { centralna, centralnaChildren } from "../../redux/centralna/centralna-selectors";
+import {stylizovanaCentralna, stylizovanaCentralnaChildren} from '../../redux/stylizovanaCentralna/stylizovanaCentralna-selectors';
 import { hutsulshchyna } from "../../redux/hutsulshchyna/hutsulshchyna-selectors";
 import { opillya } from "../../redux/opillya/opillya-selectors";
 import { volyn } from "../../redux/volyn/volyn-selectors";
@@ -39,21 +42,27 @@ import { useEffect } from "react";
 import { render } from "@testing-library/react";
 import { podillya } from "../../redux/podillya/podillya-selectors";
 import { golovniUbory } from "../../redux/golovni-ubory/golovni-selectors";
+import { rushnyky } from "../../redux/rushnyky/rushnyky-selectors";
 import { vzuttya } from "../../redux/vzuttya/vzuttya-selectors";
+import { kozhuhy } from "../../redux/kozhuhy/kozhuhy-selectors";
+import {rizne} from "../../redux/rizne/rizne-selectors";
 import whiteHeart from '../../images/svg/heart.svg';
 import DecorLine from '../decor/DecorLine';
+import i18next from "i18next";
+// import { t } from "i18next";
 
 export default function ShowProduct() {
   const [menu, setMenu] = useState(true);
   const [renderData, setRenderData] = useState(null);
   const [find, setFind] = useState(false);
-  const [categoryTitle, setCategoryTitle] = useState(false);
-  const [productTitle, setProductTitle] = useState(false);
   const [subsectionTitle, setSubsectionTitle] = useState(false);
   const [slide, setSlide] = useState(0);
+  const {t} = useTranslation();
 
   const centralnaData = useSelector(centralna);
   const centralnaChildrenData = useSelector(centralnaChildren);
+  const stylizovanaCentralnaData = useSelector(stylizovanaCentralna);
+  const stylizovanaCentralnaChildrenData = useSelector(stylizovanaCentralnaChildren);
   const bukovynaData = useSelector(bukovyna);
   const hutsulshchynaData = useSelector(hutsulshchyna);
   const opillyaData = useSelector(opillya);
@@ -63,9 +72,18 @@ export default function ShowProduct() {
   const svitData = useSelector(svit);
   const golovniUboryData = useSelector(golovniUbory);
   const vzuttyaData = useSelector(vzuttya);
+  const rushnykyData = useSelector(rushnyky);
+  const kozhuhyData = useSelector(kozhuhy);
+  const rizneData = useSelector(rizne);
   const savedData = useSelector(saved);
   const showSlider = useSelector(slider);
   const dispatch = useDispatch();
+
+  // useEffect(()=>{
+  //   if(categoryTitle === 'Буковина') {
+  //     setCategoryTitle('Bukovina reg')
+  //   }
+  // },[categoryTitle]);
 
   const hideNavigation = () => {
     setMenu(!menu);
@@ -89,84 +107,89 @@ export default function ShowProduct() {
     //
     switch (choosenRegion) {
       case "bukovyna":
-        setCategoryTitle("Буковина");
         setSubsectionTitle(false);
         setRenderData(bukovynaData);
         break;
       case "centralna":
-        setCategoryTitle("Центральна Україна");
         setSubsectionTitle(false);
         setRenderData(centralnaData);
         break;
       case "centralna-children":
-        setCategoryTitle("Центральна Україна");
         setSubsectionTitle(true);
         setRenderData(centralnaChildrenData);
         break;
+      case "stylizovanaCentralna":
+        setSubsectionTitle(false);
+        setRenderData(stylizovanaCentralnaData);
+        break;
+      case "stylizovanaCentralna-children":
+        setSubsectionTitle(true);
+        setRenderData(stylizovanaCentralnaChildrenData);
+        break;
       case "hutsulshchyna":
-        setCategoryTitle("Гуцульщина");
         setSubsectionTitle(false);
         setRenderData(hutsulshchynaData);
         break;
       case "opillya":
-        setCategoryTitle("Опілля");
         setSubsectionTitle(false);
         setRenderData(opillyaData);
         break;
       case "volyn":
-        setCategoryTitle("Волинь");
         setSubsectionTitle(false);
         setRenderData(volynData);
         break;
       case "zakarpattya":
-        setCategoryTitle("Закарпаття");
         setSubsectionTitle(false);
         setRenderData(zakarpattyaData);
         break;
       case "podillya":
-        setCategoryTitle("Поділля");
         setSubsectionTitle(false);
         setRenderData(podillyaData);
         break;
       case "svit":
-        setCategoryTitle("Костюми народів світу");
         setSubsectionTitle(false);
         setRenderData(svitData);
         break;
       case "golovni-ubory":
-        setCategoryTitle("Головні убори");
         setSubsectionTitle(false);
         setRenderData(golovniUboryData);
         break;
       case "vzuttya":
-        setCategoryTitle("Сценічне взуття");
         setSubsectionTitle(false);
         setRenderData(vzuttyaData);
         break;
+      case "rushnyky":
+        setSubsectionTitle(false);
+        setRenderData(rushnykyData);
+        break;
+      case "kozhuhy":
+        setSubsectionTitle(false);
+        setRenderData(kozhuhyData);
+        break;
+      case "rizne":
+        setSubsectionTitle(false);
+        setRenderData(rizneData);
+        break;
       case "saved":
-        setCategoryTitle(false);
         setSubsectionTitle(false);
         setRenderData(savedData);
         break;
       default:
-        setCategoryTitle(false);
         setSubsectionTitle(false);
         setRenderData(null);
         break;
     }
+    window.scrollTo({top: 0, left: 0, "behavior": "smooth"});
   };
 
   const showSaved = () => {
-    console.log(savedData);
     setRenderData(savedData);
     setFind(false);
-    setCategoryTitle(false);
   };
 
   const findProduct = () => {
     setRenderData(null);
     setFind(true);
-    setCategoryTitle(false);
     window.scrollTo({top: 0, left: 0, "behavior": "smooth"});
   };
 
@@ -179,7 +202,6 @@ export default function ShowProduct() {
   };
 
   const changeElement = (newData) => {
-    console.log(newData);
     setRenderData(newData);
   };
 
@@ -190,64 +212,79 @@ export default function ShowProduct() {
     <Container>
       <Content empty tablet>
         <ButtonContainer>
-          <Button onClick={findProduct}>Пошук за номером</Button>
-          <ButtonHeart onClick={showSaved} desktop>Збережене</ButtonHeart>
+          <Button onClick={findProduct}>{t('buttons.search')}</Button>
+          <ButtonHeart onClick={showSaved} desktop>{t('buttons.saved')}</ButtonHeart>
           <Button type="button" onClick={hideNavigation} desktop>
-            Каталог продукції
+            {t('buttons.catalog')}
           </Button>
         </ButtonContainer>
         <Desktop>
           <Navigation className={!menu && "hide"}>
-            <NavTitle a={menu}>КАТАЛОГ ПРОДУКЦІЇ</NavTitle>
+            <NavTitle a={menu}>{t('navigation.title')}</NavTitle>
             <DesktopDecor><DecorLine /></DesktopDecor>
             <HideButton type="button" onClick={hideNavigation} />
             <ProductList onClick={showProducts}>
               <ProductCategory name="ukrainian">
-                Українські народні костюми
+                <Span category>{t('navigation.ukrainian')}</Span>
                 <RegionList>
                   {regions.map((el) => (
                     <Region key={el.name}>
                       {el.children ? (
                           <ProductCategoryContainer>
-                            {el.content}
+                            {i18next.language === 'ua' ? el.content : el.contentEng}
                             <ProductButton name={el.name} subsection>
-                              для дорослих
+                              {t("navigation.adults")}
                             </ProductButton>
                             <ProductButton name={el.children} subsection>
-                              для дітей
+                            {t("navigation.children")}
                             </ProductButton>
                           </ProductCategoryContainer>
                       ) : (
-                        <ProductButton name={el.name}>{el.content}</ProductButton>
+                        <ProductButton name={el.name}>
+                          {i18next.language === 'ua' ? el.content : el.contentEng}
+                        </ProductButton>
                       )}
                     </Region>
                   ))}
                 </RegionList>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton name="svit">Костюми народів світу</ProductButton>
+                <ProductButton name="kozhuhy" category>{t('navigation.kozhukh')}</ProductButton>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton>Стилізований одяг</ProductButton>
+                <ProductButton name="golovni-ubory" category>{t('navigation.head')}</ProductButton>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton name="golovni-ubory">Головні убори</ProductButton>
+                <ProductButton name="vzuttya" category>{t('navigation.shoes')}</ProductButton>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton name="vzuttya">Сценічне взуття</ProductButton>
+                <ProductButton name="rushnyky" category>{t('navigation.rushnyk')}</ProductButton>
+              </ProductCategory>
+              <ProductCategory>
+                <ProductButton name="svit" category>{t('navigation.world')}</ProductButton>
+              </ProductCategory>
+              <ProductCategory>
+                <ProductButton name="rizne" category>{t('navigation.rizne')}</ProductButton>
               </ProductCategory>
             </ProductList>
           </Navigation>
           <CardContainer>
             {find && <FindProduct newData={showProductsByNumber} />}
-            {renderData && <DescriptionHeart>Вироби, які Вам сподобаються, можна зберегти, натиснувши на сердечко <img src={whiteHeart} width="12px"/>, і згодом переглянути у розділі "Збережене"</DescriptionHeart>}
-            {categoryTitle && <Title>{categoryTitle}</Title>}
-            {subsectionTitle && <Title>для дітей</Title>}
-            {renderData &&
+            {renderData && renderData.length > 0 && <DescriptionHeart>
+              {i18next.language === 'ua' 
+            ? 'Вироби, які Вам сподобаються, можна зберегти, натиснувши на сердечко ' 
+            : 'You can save items by clicking the heart button '}
+            <img src={whiteHeart} width="12px"/> 
+            {i18next.language === 'ua' 
+            ? ', і згодом переглянути у розділі "Збережене"'
+            : '. Later You can find the selected items in "Saved" section'}
+              </DescriptionHeart>}
+            {renderData && renderData.length > 0 && <Title>{i18next.language === 'ua' ? renderData[0].categoryUkr : renderData[0].categoryEng}</Title>}
+            {renderData && renderData.length > 0 && renderData[0].children && <Title>{i18next.language === 'ua' ? 'для дітей' : 'for children'}</Title>}
+            {renderData && renderData.length > 0 &&
               renderData.map((el, index) => (
                 <ProductCard
                   data={el}
-                  title={productTitle}
                   key={el.id}
                   index={index}
                   slide={getSlide}

@@ -1,0 +1,1 @@
+export const rizne = state => state.rizne;

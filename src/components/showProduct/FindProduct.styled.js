@@ -71,6 +71,7 @@ export const Select = styled.select`
 `;
 
 export const Option = styled.option`
+
     &[checked] {
         // background-image: linear-gradient(to right, rgb(255,3,62), rgb(255,239,0));
         background-color: red;

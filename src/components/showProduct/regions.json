@@ -2,38 +2,43 @@
     {
         "name": "centralna",
         "content": "Центральна Україна",
+        "contentEng": "Central Ukraine",
         "children": "centralna-children"
     },
     {
+        "name": "stylizovanaCentralna",
+        "content": "Стилізована Центральна Україна",
+        "contentEng": "Stylized Central Ukraine",
+        "children": "stylizovanaCentralna-children"
+    },
+    {
         "name": "hutsulshchyna",
-        "content": "Гуцульщина"
+        "content": "Гуцульщина",
+        "contentEng": "Hutsul region"
     },
     {
         "name": "zakarpattya",
-        "content": "Закарпаття"
+        "content": "Закарпаття",
+        "contentEng": "Zakarpattia region"
     },
     {
         "name": "bukovyna",
-        "content": "Буковина"
+        "content": "Буковина",
+        "contentEng": "Bukovina region"
     },
     {
         "name": "volyn",
-        "content": "Волинь"
+        "content": "Волинь і Полісся",
+        "contentEng": "Volhynia region"
     },
     {
         "name": "opillya",
-        "content": "Опілля"
+        "content": "Опілля",
+        "contentEng": "Opillia region"
     },
     {
         "name": "podillya",
-        "content": "Поділля"
-    },
-    {
-        "name": "polissya",
-        "content": "Полісся"
-    },
-    {
-        "name": "pokuttya",
-        "content": "Покуття"
+        "content": "Поділля",
+        "contentEng": "Podilia region"
     }
 ]

@@ -1,36 +1,43 @@
 [
     {
         "text": "Пошиття національного одягу всіх регіонів України і сусідніх держав",
+        "textEng": "Folk costumes of all regions of Ukraine and neigboring countries",
         "photo": "001.jpg",
         "id": "1"
     },
     {
         "text": "Пошиття одягу для танцювальних колективів",
+        "textEng": "Costumes for dance ensembles",
         "photo": "002.jpg",
         "id": "2"
     },
     {
         "text": "Пошиття одягу для хорових колективів",
+        "textEng": "Costumes for choirs",
         "photo": "003.jpg",
         "id": "3"
     },
     {
         "text": "Пошиття карнавальних костюмів для вертепів, новорічних вечірок",
+        "textEng": "Carnival costumes for Verteps and New Year Parties",
         "photo": "004.jpg",
         "id": "4"
     },
     {
         "text": "Пошиття весільного строю",
+        "textEng": "Wedding folk clothes",
         "photo": "001.jpg",
         "id": "5"
     },
     {
         "text": "Виготовлення тканих речей",
+        "textEng": "Woven items for costumes",
         "photo": "006.jpg",
         "id": "6"
     },
     {
         "text": "Виготовлення аксесуарів до костюмів",
+        "textEng": "Accessories for costumes",
         "photo": "007.jpg",
         "id": "7"
     }

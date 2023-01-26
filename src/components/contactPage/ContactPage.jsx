@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   Container,
   P,
@@ -10,10 +11,12 @@ import {
   Social,
   Socials,
   Address,
-} from "./ContactPage";
+} from "./ContactPage.styled.js";
 import { Content } from "../../App.styled";
 
 export default function ContactPage() {
+  const {t} = useTranslation();
+
   return (
     <Container>
       <Content contacts>
@@ -34,7 +37,7 @@ export default function ContactPage() {
           </Socials>
           <Phones>
             <Phone href={"tel:+380633197588"} main>
-              +380633197588, є Viber <Viber />
+              +380633197588, {t('contacts.end')} Viber <Viber />
             </Phone>
             <Phone href={"tel:+380984387271"} main>
               +380984387271
@@ -45,7 +48,7 @@ export default function ContactPage() {
               dobros-design@com.ua
             </Email>
           </div>
-          <Address>вул.М.Хвильового 12, Львів, UA</Address>
+          <Address>{t('contacts.address')}</Address>
         </div>
       </Content>
     </Container>

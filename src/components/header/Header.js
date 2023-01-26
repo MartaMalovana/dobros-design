@@ -1,12 +1,15 @@
-import {useState} from "react";
-import { Container, Logo, Phone, HeaderBox, BurgerButton, Burger, Menu, MenuList, MenuItem, MenuItemHeart, MenuClose, StyledLink} from "./Header.styled";
+import { useState } from "react";
+import { Container, Logo, HeaderBox, BurgerButton, Burger, Menu, MenuClose} from "./Header.styled";
 import { Content } from "../../App.styled";
-import DecorLine from "../decor/DecorLine";
 import logo from '../../images/jpg/logo.jpg';
 import RenderMenuList from "./RenderMenuList";
+import { useLocation } from 'react-router-dom';
+import LanguageBox from './Languages';
 
-export default function Header ({desktop}) {
+export default function Header() {
     const [menu, setShowMenu] = useState(false);
+    const location = useLocation();
+
 
     const openMenu = (e) => {
         e.preventDefault();
@@ -21,19 +24,19 @@ export default function Header ({desktop}) {
     return (
         <Container>
             <Content>
-                <HeaderBox desktop={desktop}>
+                <HeaderBox desktop={location.pathname === '/' && "desktop"}>
                     <Logo src={logo} />
+                    <LanguageBox />
                     <BurgerButton onClick={openMenu}><Burger /></BurgerButton>
-                    {menu && 
-                        <Menu>
-                            <MenuClose onClick={closeMenu}/>
+                    {menu &&
+                        <Menu onClick={closeMenu}>
+                            <MenuClose onClick={closeMenu} />
                             <RenderMenuList />
                         </Menu>
                     }
-                    <RenderMenuList tablet/>
+                    <RenderMenuList tablet />
                 </HeaderBox>
             </Content>
-            {/* <DecorLine /> */}
         </Container>
     );
 }

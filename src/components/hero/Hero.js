@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
+import i18next from "i18next";
 import { Content } from "../../App.styled";
 import { 
     Container, 
@@ -19,13 +21,16 @@ import {
     OrderTitle,
     OrderInfo,
     OrderText} from './Hero.styled';
-import { Phone } from "../contactPage/ContactPage";
+import { Phone } from "../contactPage/ContactPage.styled";
 import photo1 from '../../images/jpg/hero.jpg';
 import DecorLine from "../decor/DecorLine";
 import RenderMenuList from "../header/RenderMenuList";
 import proposes from './proposes.json';
+import LanguageBox from "../header/Languages";
 
 export default function Hero({desktop}) {
+    const { t, i18n } = useTranslation();
+
     const [showInfo, setShowInfo] = useState(false);
     const { ref, inView, entry } = useInView({
         root: null,
@@ -33,55 +38,48 @@ export default function Hero({desktop}) {
         threshold: 0,
         triggerOnce: true
     });
-    useEffect(() => console.log(inView), [inView]);
 
     return (
         <Container>
             <Content>
                 <HeroBox> 
-                    <LogoHero />       
+                    <LogoHero />   
+                    <LanguageBox home />
                     <RenderMenuList tablet desktop={desktop}/>
-                    <Text className={inView && 'visible'}>Ательє сценічного костюму</Text>
+                    <Text className={inView && 'visible'}>{t('hero.title')}</Text>
                     <div ref={ref}><Photo /></div>
                     <Title className={inView && "visible"}><DecorLine desktop />DOBROS - DESIGN<DecorLine desktop/></Title>
-                    <About>Ми з 2007 року - на ринку пошиття сценічних костюмів. Успішно працюємо, збагачуємо досвід та удосконалюємо свою майстерність.</About>
-                    <ProposesTitle>Ми пропонуємо:</ProposesTitle>
+                    <About>{t('hero.about')}</About>
+                    <ProposesTitle>{t('hero.propose')}</ProposesTitle>
                     <ProposesList>
                         {proposes.map(el => 
                             <Propose key={el.id}>
                                 <ProposeContainer>
-                                    <ProposeText>{el.text}</ProposeText>
+                                    <ProposeText>{i18next.language === 'ua' ? el.text : el.textEng}</ProposeText>
                                     <ProposePhoto src={require(`../../images/jpg/proposes/${el.photo}`)}/>
                                 </ProposeContainer>
                             </Propose>
                         )}
                     </ProposesList>
-                    <P>Завдяки професіоналізму колективу ми швидко і якісно виконуємо замовлення!</P>
-                    <P>Порядність відносин гарантуємо!</P>
+                    <P>{t('hero.p1')}</P>
+                    <P>{t('hero.p2')}</P>
                 </HeroBox>
-                <OrderTitle onClick={() => setShowInfo(!showInfo)}>Як здійснити замовлення?</OrderTitle>
+                <OrderTitle onClick={() => setShowInfo(!showInfo)}>{t('hero.orderTitle')}</OrderTitle>
                 {showInfo && <OrderInfo>
+                    <OrderText>{t('hero.orderP1')}</OrderText>
                     <OrderText>
-                    У розділі "Продукція" оберіть категорію костюмів. Далі - костюм, що
-                    сподобався. На картці товару є номер. Назва категорії і номер картки
-                    визначає ідентифікацію моделі костюму (наприклад, "Центральна Україна
-                    - 001" або "Волинь - 007").
+                        {i18next.language === 'ua' ? 
+                        <>
+                        Зателефонуйте нам за номером телефону 
+                        <Phone href={"tel:+380633197588"}> +380633197588</Phone> або 
+                        <Phone href={"tel:+380984387271"}> +380984387271</Phone>. 
+                        </> : 'Then send us an email, please.'}
                     </OrderText>
+                    <OrderText>{t('hero.orderP2')}</OrderText>
                     <OrderText>
-                    Зателефонуйте нам за номером телефону 
-                    <Phone href={"tel:+380633197588"}> +380633197588</Phone> або 
-                    <Phone href={"tel:+380984387271"}> +380984387271</Phone>. 
+                        {i18next.language === 'ua' && 'Можливий виїзд фахівця для зняття мірок.'} 
                     </OrderText>
-                    <OrderText>
-                    У період перемовин узгоджується колористика або розробка нової моделі.
-                    </OrderText>
-                    <OrderText>
-                    Можливий виїзд фахівця для зняття мірок.
-                    </OrderText>
-                    <OrderText>
-                    Після виконання замовлення надається повний пакет бухгалтерський
-                    документів згідно чинного Законодавства.
-                    </OrderText>
+                    <OrderText>{t('hero.orderP3')}</OrderText>
                 </OrderInfo>           
                 }
             </Content>

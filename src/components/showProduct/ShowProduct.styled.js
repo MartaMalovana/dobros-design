@@ -18,12 +18,12 @@ export const ButtonContainer = styled.div`
 
     @media screen and (min-width: 768px) {
         position: absolute;
-        top: 550px;
+        top: 670px;
         left: 15px;
        }
 
     @media screen and (min-width: 1000px) {
-        top: 650px;
+        top: 770px;
     }    
     
      
@@ -108,7 +108,7 @@ export const Navigation = styled.nav`
 
    @media screen and (min-width: 768px) {
     position: static;
-    width: 255px;
+    width: 270px;
     box-shadow: none;
     margin-right: 20px;
     margin-top: 20px;
@@ -120,7 +120,7 @@ export const Navigation = styled.nav`
   }
 
     @media screen and (min-width: 1000px) {
-        width: 320px;
+        width: 335px;
     }    
 
 `;
@@ -128,6 +128,7 @@ export const Navigation = styled.nav`
 export const Desktop = styled.div`
 @media screen and (min-width: 768px) {
    display: flex;
+   align-items: flex-start;
   }
 
 `;
@@ -184,11 +185,17 @@ export const ProductList = styled.ul`
 export const ProductCategory = styled.li`
     margin-bottom: 10px;
     padding: 0 10px;
+    font-weight: ${props => props.category && "600"};
+
     @media screen and (min-width: 1000px) {
         font-size: 20px;
     }    
 
 
+`;
+
+export const Span = styled.span`
+    font-weight: ${props => props.category && "600"}; 
 `;
 
 export const RegionList = styled.ul`
@@ -209,10 +216,11 @@ export const ProductButton = styled.button`
    border: none;
    font-family: 'Montserrat';
    font-size: 16px;
-   
+   font-weight: ${props => props.category && "600"};
+
    &:hover, 
    &:focus {
-        color: rgb(250,70,22);
+        color: rgb(255,184,28);
    };
 
    &.active {
@@ -240,11 +248,12 @@ export const CardContainer = styled.div`
    @media screen and (min-width: 768px) {
     width: 480px;
     margin: 30px auto;
+    justify-content: ${props => props.desktop && "flex-start"};
   }
 
   @media screen and (min-width: 1000px) {
     font-size: 25px;
-    width: ${props => props.desktop && "100%"}
+    width: ${props => props.desktop && "100%"};
 }    
 
 
@@ -256,12 +265,18 @@ export const Title = styled.h2`
     text-align: center;
     letter-spacing: 1px;
     font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    @media screen and (min-width: 768px) {
+        font-size: 26px;
+  }
 
 `;
 
 export const Card = styled.a`
    position: relative;
    flex-basis: ${props => props.one ? "100%" : "Calc((100% - 20px) / 2)"};
+   height: fit-content;
    margin-bottom: 20px;
 
    &:hover {
@@ -282,7 +297,7 @@ export const Product = styled.img`
 
    @media screen and (min-width: 768px) {
         max-height: ${props => props.sliderSize === "true" ? "auto" : "350px"};
-
+        height: ${props => props.sliderSize === "true" && "90vh"};
   }
 
 `;
