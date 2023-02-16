@@ -15,6 +15,7 @@ export const Review = styled.li`
 export const ReviewPhoto = styled.img`
     width: 100%;
     max-width: 600px;
+    display: block;
     object-fit: contain;
 `;
 

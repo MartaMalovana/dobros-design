@@ -191,8 +191,16 @@ export const MenuItem = styled.li`
     transition-property: color;
     transition-duration: 300ms;
 
+    &.activePage {
+        color: rgb(250,70,22);
+    }
+
     &:hover {
         color: rgb(255,184,28);
+    }
+
+    &:focus {
+        color: rgb(250,70,22);
     }
 
     @media screen and (min-width: 768px) {

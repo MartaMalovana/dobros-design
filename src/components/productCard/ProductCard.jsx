@@ -16,7 +16,7 @@ export default function ProductCard({data, title, slider, index, slide, changeCu
     const { ref, inView, entry } = useInView({
       // root: null,
       // rootMargin: '0px',
-      threshold: 0.5,
+      threshold: 0.1,
       triggerOnce: true
     });
   
@@ -61,6 +61,7 @@ export default function ProductCard({data, title, slider, index, slide, changeCu
                 className={renderData.saved === "true" && "red"}
                 name={renderData.id}
                 desktop={saved && 'true'}
+                size={sliderSize}
               />
               </> : <Skeleton><SkeletonMessage>фото завантажується...</SkeletonMessage></Skeleton>} 
             </Card>

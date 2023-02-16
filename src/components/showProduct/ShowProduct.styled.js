@@ -36,7 +36,10 @@ export const Button = styled.button`
     border: 1px solid black;
     padding: 5px 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition-property: border, color;
+    transition-duration: 300ms;
 
+    &:hover,
     &:focus {
         border: 1px solid rgb(250,70,22);
         color: rgb(250,70,22);
@@ -65,10 +68,10 @@ export const ButtonHeart = styled(Button)`
 `;
 export const Heart = styled.button`
     position:${props => props.static ? "static" : "absolute"};
-    bottom: 20px;
-    right: 15px;
-    width: 25px;
-    height: 25px;
+    bottom: ${props => props.size ? "40px" : "20px"};
+    right: ${props => props.size ? "30px" : "15px"};
+    width: ${props => props.size ? "35px" : "25px"};
+    height: ${props => props.size ? "35px" : "25px"};
     margin: 1px auto 0;
     border-radius: 50%;
     border: none;
@@ -199,24 +202,62 @@ export const Span = styled.span`
 `;
 
 export const RegionList = styled.ul`
-//    padding-left: 0;
+    position: relative;
 
+    &::before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 100%;
+        top: -9px;
+        left: 15px;
+        background-color: black;
+    }
+
+    @media screen and (min-width: 1000px) {
+        &::before {
+            top: -11px;
+            left: 15px;
+        }
+    }         
 `;
 
 export const Region = styled.li`
     margin: 10px 0;
+    position: relative;
+
+    // &::before {
+    //     position: absolute;
+    //     content: '';
+    //     width: 1px;
+    //     height: Calc(100% - 28px );
+    //     top: 20px;
+    //     left: 15px;
+    //     background-color: black;
+    // }
 
 `;
 
 export const ProductButton = styled.button`
    display: block;
-   padding: ${props => props.subsection ? "0 0 0 40px" : "0"};
-   margin: ${props => props.subsection ? "5px 0 0 0" : "0"};
+   padding: ${props => props.subsection ? "0 0 0 0" : "0"};
+   margin: ${props => props.subsection ? "5px 0 0 40px" : "0"};
    background-color: inherit;
    border: none;
    font-family: 'Montserrat';
    font-size: 16px;
    font-weight: ${props => props.category && "600"};
+   position: relative;
+   
+   // &::before {
+    //     position: absolute;
+    //     content: '';
+    //     width: 1px;
+    //     height: Calc(100% - 28px );
+    //     top: 20px;
+    //     left: 15px;
+    //     background-color: black;
+    // }
 
    &:hover, 
    &:focus {
@@ -237,6 +278,26 @@ export const ProductCategoryContainer = styled.div`
    display: flex;
    flex-direction: column;
    align-items: flex-start;
+   position: relative;
+
+   &::before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 39px;
+    bottom: 9px;
+    left: 15px;
+    background-color: black;
+   }
+
+   @media screen and (min-width: 1000px) {
+    &::before {
+        height: 46px;
+        bottom: 11px;
+        left: 15px;
+       }    
+    }    
+
 `;
 
 export const CardContainer = styled.div`
@@ -356,4 +417,39 @@ export const DescriptionHeart = styled.p`
     font-size: 18px;
 }    
 
+`;
+
+export const MenuDecor = styled.div`
+    position: absolute;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 1px;
+        top: 10px;
+        left: -25px;
+        background-color: black;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 5px;
+        width: 5px;
+        background-color: black;
+        transform: rotate(45deg);
+        left: -10px;
+        top: 8px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        &::before {
+            top: 12px;
+        }
+        &::after {
+            top: 10px;
+        }
+    }    
+    
 `;

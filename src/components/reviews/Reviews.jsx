@@ -10,7 +10,7 @@ export default function Reviews () {
                {reviewList.map(el => 
                 <Review key={el.id}>
                     <ReviewPhoto src={require(`../../images/jpg/reviews/large/${el.photo}`)}/>
-                    <ReviewTitle>{i18next.language === 'ua' ? el.title : el.titleEng}</ReviewTitle>
+                    {/* <ReviewTitle>{i18next.language === 'ua' ? el.title : el.titleEng}</ReviewTitle> */}
                 </Review>
                )}
             </List>

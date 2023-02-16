@@ -24,6 +24,7 @@ export const Social = styled.div`
     display: flex;
     margin: 10px auto;
     width: fit-content;
+    align-items: center;
 
     @media screen and (min-width: 768px) {
         margin: 15px auto; 
@@ -93,12 +94,17 @@ export const Phone = styled.a`
 export const Viber = styled.div`
     position: absolute;
     top: 50%;
-    right: -10px;
+    right: 10px;
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
     background-image: url(${viber});
     background-size: contain;
+
+    @media screen and (min-width: 768px) {
+        right: 20px;
+    }    
+
 `;
 
 export const Email = styled(Phone)`

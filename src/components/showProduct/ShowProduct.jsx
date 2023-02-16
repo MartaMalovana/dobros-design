@@ -21,7 +21,8 @@ import {
   DescriptionHeart,
   Desktop,
   DesktopDecor,
-  Span
+  Span,
+  MenuDecor
 } from "./ShowProduct.styled";
 import ProductCard from "../productCard/ProductCard";
 import regions from "./regions.json";
@@ -89,21 +90,17 @@ export default function ShowProduct() {
     setMenu(!menu);
   };
 
-  const showProducts = (e) => {
+  const showProducts = (e, name) => {
     // Change color of chosen category in menu
-    [...document.querySelectorAll(".active")].map((el) =>
-      el.classList.remove("active")
-    );
-    e.target.classList.toggle("active");
-    if (!e.target.name) {
-      setRenderData(centralnaData);
-      document.querySelector('[name="centralna"]').classList.add("active");
-    }
+    document.querySelector(".active").classList.remove("active");
+    e.target.classList.add("active");
+
     // Close menu and search component
     setFind(false);
     setMenu(false);
     // Get the name of chosen category in product menu
-    const choosenRegion = e.target.name;
+    console.log(name);
+    const choosenRegion = name;
     //
     switch (choosenRegion) {
       case "bukovyna":
@@ -223,24 +220,27 @@ export default function ShowProduct() {
             <NavTitle a={menu}>{t('navigation.title')}</NavTitle>
             <DesktopDecor><DecorLine /></DesktopDecor>
             <HideButton type="button" onClick={hideNavigation} />
-            <ProductList onClick={showProducts}>
+            <ProductList  >
               <ProductCategory name="ukrainian">
                 <Span category>{t('navigation.ukrainian')}</Span>
                 <RegionList>
                   {regions.map((el) => (
                     <Region key={el.name}>
+                      <MenuDecor />
                       {el.children ? (
                           <ProductCategoryContainer>
                             {i18next.language === 'ua' ? el.content : el.contentEng}
-                            <ProductButton name={el.name} subsection>
+                            <ProductButton name={el.name} subsection onClick={(e)=> showProducts(e, el.name)}>
+                              <MenuDecor />
                               {t("navigation.adults")}
                             </ProductButton>
-                            <ProductButton name={el.children} subsection>
-                            {t("navigation.children")}
+                            <ProductButton name={el.children} subsection onClick={(e)=> showProducts(e, el.children)}>
+                              <MenuDecor />
+                              {t("navigation.children")}
                             </ProductButton>
                           </ProductCategoryContainer>
                       ) : (
-                        <ProductButton name={el.name}>
+                        <ProductButton name={el.name} onClick={(e)=> showProducts(e, el.name)}>
                           {i18next.language === 'ua' ? el.content : el.contentEng}
                         </ProductButton>
                       )}
@@ -249,22 +249,22 @@ export default function ShowProduct() {
                 </RegionList>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton name="kozhuhy" category>{t('navigation.kozhukh')}</ProductButton>
+                <ProductButton name="kozhuhy" category onClick={(e)=> showProducts(e, "kozhuhy")}>{t('navigation.kozhukh')}</ProductButton>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton name="golovni-ubory" category>{t('navigation.head')}</ProductButton>
+                <ProductButton name="golovni-ubory" category onClick={(e)=> showProducts(e, "golovni-ubory")}>{t('navigation.head')}</ProductButton>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton name="vzuttya" category>{t('navigation.shoes')}</ProductButton>
+                <ProductButton name="vzuttya" category onClick={(e)=> showProducts(e, "vzuttya")}>{t('navigation.shoes')}</ProductButton>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton name="rushnyky" category>{t('navigation.rushnyk')}</ProductButton>
+                <ProductButton name="rushnyky" category onClick={(e)=> showProducts(e, "rushnyky")}>{t('navigation.rushnyk')}</ProductButton>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton name="svit" category>{t('navigation.world')}</ProductButton>
+                <ProductButton name="svit" category onClick={(e)=> showProducts(e, "svit")}>{t('navigation.world')}</ProductButton>
               </ProductCategory>
               <ProductCategory>
-                <ProductButton name="rizne" category>{t('navigation.rizne')}</ProductButton>
+                <ProductButton name="rizne" category onClick={(e)=> showProducts(e, "rizne")}>{t('navigation.rizne')}</ProductButton>
               </ProductCategory>
             </ProductList>
           </Navigation>

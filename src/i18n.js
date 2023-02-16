@@ -32,7 +32,7 @@ i18n
                         main: 'Головна',
                         products: 'Продукція',
                         saved: 'Збережене',
-                        works: 'Наші роботи',
+                        works: 'Фотозвіт',
                         contacts: 'Контакти'
                     },
                     buttons: {
@@ -96,7 +96,7 @@ i18n
                         main: 'Home',
                         products: 'Products',
                         saved: 'Saved',
-                        works: 'Our works',
+                        works: 'Photo report',
                         contacts: 'Contacts'
                     },
                     buttons: {
