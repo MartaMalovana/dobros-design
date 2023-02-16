@@ -49,7 +49,8 @@ export default function Hero({desktop}) {
                     <Text className={inView && 'visible'}>{t('hero.title')}</Text>
                     <div ref={ref}><Photo /></div>
                     <Title className={inView && "visible"}><DecorLine desktop />DOBROS - DESIGN<DecorLine desktop/></Title>
-                    <About>{t('hero.about')}</About>
+                    <About>{t('hero.about1')}</About>
+                    <About>{t('hero.about2')}</About>
                     <ProposesTitle>{t('hero.propose')}</ProposesTitle>
                     <ProposesList>
                         {proposes.map(el => 

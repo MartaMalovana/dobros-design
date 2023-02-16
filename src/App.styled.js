@@ -67,7 +67,9 @@ export const Content = styled.div`
   }
 
   @media screen and (min-width: 1000px) {
-    max-width: 1000px;
+    max-width: 1440px;
+    // padding-left: 30px;
+    // padding-right: 30px;
     min-height: ${props => props.empty ? "870px" : "auto"};
   }
 `;

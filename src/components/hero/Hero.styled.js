@@ -126,7 +126,7 @@ export const Title = styled.h1`
         padding: 5px 20px;
 
         &.visible {
-            top: 500px;
+            top: 520px;
             opacity: 1;
         }
     }    
@@ -150,8 +150,9 @@ export const Photo = styled.div`
     @media screen and (min-width: 1000px) {
         background-image: url(${heroDesktop});
         margin-top: 0;
-        height: 600px;
-
+        height: 700px;
+        background-size: cover;
+        background-position:  0 -200px;
     }
 
 `;

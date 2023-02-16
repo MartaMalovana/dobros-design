@@ -27,6 +27,7 @@ export const HeaderBox = styled.header`
     @media screen and (min-width: 1000px) {
         display: ${props => props.desktop && "none"};
         padding: 10px 5px;
+        margin: 0 20px;
     }
 `;
 

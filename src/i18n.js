@@ -16,7 +16,8 @@ i18n
                 translation: {
                     hero: {
                         title: 'Ательє сценічного костюму',
-                        about: 'Ми з 2007 року - на ринку пошиття сценічних костюмів. Успішно працюємо, збагачуємо досвід та удосконалюємо свою майстерність.',
+                        about1: 'Ми з 2007 року - на ринку пошиття сценічних костюмів. ',
+                        about2: 'Успішно працюємо, збагачуємо досвід та удосконалюємо свою майстерність!',
                         propose: 'Ми пропонуємо: ',
                         p1: 'Завдяки професіоналізму колективу ми швидко і якісно виконуємо замовлення!',
                         p2: 'Порядність відносин гарантуємо!',
@@ -81,7 +82,8 @@ i18n
                 translation: {
                     hero: {
                         title: 'Stage costumes atelier',
-                        about: 'We create costumes since 2007 and continue working with passion. We enrich our experience and improve our skills.',
+                        about1: 'We create costumes since 2007 and continue working with passion.',
+                        about2: 'We enrich our experience and improve our skills!',
                         propose: 'We create: ',
                         p1: 'Our professional team completes all the orders fast and qualitatively!',
                         p2: 'We guarantee the decency of our business relations!',

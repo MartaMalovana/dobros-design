@@ -8,8 +8,8 @@ export default function Reviews () {
         <Content>
             <List>
                {reviewList.map(el => 
-                <Review key={el.id}>
-                    <ReviewPhoto src={require(`../../images/jpg/reviews/large/${el.photo}`)}/>
+                <Review key={el.id} column={el.column} row={el.row}>
+                    <ReviewPhoto src={require(`../../images/jpg/reviews/large/${el.photo}`)} />
                     {/* <ReviewTitle>{i18next.language === 'ua' ? el.title : el.titleEng}</ReviewTitle> */}
                 </Review>
                )}

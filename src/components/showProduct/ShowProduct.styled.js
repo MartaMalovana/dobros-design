@@ -8,6 +8,11 @@ import aa from '../../images/svg/aa.svg';
 
 export const Container = styled.div`
     position: relative;
+
+    @media screen and (min-width: 1000px) {
+        margin: 0 20px;
+    }    
+
 `;
 
 export const ButtonContainer = styled.div`

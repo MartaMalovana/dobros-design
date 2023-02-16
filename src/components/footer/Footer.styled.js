@@ -30,6 +30,7 @@ export const FooterBox = styled.div`
     @media screen and (min-width: 1000px) {
         font-size: 20px;
         padding-bottom: 70px;
+        margin: 0 20px;
     }    
 
 `;
