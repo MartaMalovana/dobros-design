@@ -312,7 +312,7 @@ export const CardContainer = styled.div`
    margin: 15px;
 
    @media screen and (min-width: 768px) {
-    width: 480px;
+    width: 750px;
     margin: 30px auto;
     justify-content: ${props => props.desktop && "flex-start"};
   }
@@ -349,9 +349,13 @@ export const Card = styled.a`
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
    }
 
-   @media screen and (min-width: 1000px) {
-    flex-basis: ${props => props.desktop === "true" && "Calc((100% - 20px) / 3)"};
-}    
+   @media screen and (min-width: 768px) {
+    flex-basis: ${props => props.desktop === "true" && "250px"};
+    }    
+
+//    @media screen and (min-width: 1000px) {
+//     flex-basis: ${props => props.desktop === "true" && "Calc((100% - 20px) / 3)"};
+//     }    
 
 `;
 

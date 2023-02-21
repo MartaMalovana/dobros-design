@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Container, Logo, HeaderBox, BurgerButton, Burger, Menu, MenuClose} from "./Header.styled";
+import { NavLink } from 'react-router-dom';
+import { Container, Logo, HeaderBox, BurgerButton, Burger, Menu, MenuClose } from "./Header.styled";
 import { Content } from "../../App.styled";
 import logo from '../../images/jpg/logo.jpg';
 import RenderMenuList from "./RenderMenuList";
@@ -22,10 +23,10 @@ export default function Header() {
     };
 
     return (
-        <Container>
+        <Container reviews={location.pathname === '/works'}>
             <Content>
                 <HeaderBox desktop={location.pathname === '/' && "desktop"}>
-                    <Logo src={logo} />
+                    <NavLink to="/"><Logo src={logo} /></NavLink>
                     <LanguageBox />
                     <BurgerButton onClick={openMenu}><Burger /></BurgerButton>
                     {menu &&

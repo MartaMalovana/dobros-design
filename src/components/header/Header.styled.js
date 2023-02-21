@@ -3,10 +3,14 @@ import {NavLink} from 'react-router-dom';
 // import close from '../../images/svg/close.svg';
 import heart from '../../images/svg/heart.svg';
 import close from '../../images/svg/close1.svg';
+
 export const Container = styled.div`
     position: relative;
     box-shadow: 0 5px 20px -10px #000;
-    
+
+    @media screen and (min-width: 768px) {
+        background-image: ${props => props.reviews === true && 'linear-gradient(180deg, #f2f2f2, #cf4c4ced)'};
+    }
     // &::after {
     //     content: '';
     //     position: absolute;
@@ -34,6 +38,9 @@ export const HeaderBox = styled.header`
 export const Logo = styled.img`
     width: 30px;
     height: 30px;
+    border: 5px solid white;
+    border-radius: 50%;
+    background-color: white;
     object-fit: contain;
 
     @media screen and (min-width: 1000px) {

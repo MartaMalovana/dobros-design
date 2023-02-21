@@ -15,7 +15,7 @@ import {
 import { Content } from "../../App.styled";
 
 export default function ContactPage() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Container>
@@ -37,7 +37,7 @@ export default function ContactPage() {
           </Socials>
           <Phones>
             <Phone href={"tel:+380633197588"} main>
-              +380633197588, {t('contacts.end')} Viber <Viber />
+              +380633197588, {t("contacts.end")} Viber <Viber />
             </Phone>
             <Phone href={"tel:+380984387271"} main>
               +380984387271
@@ -48,7 +48,7 @@ export default function ContactPage() {
               dobros-design@com.ua
             </Email>
           </div>
-          <Address>{t('contacts.address')}</Address>
+          <Address>{t("contacts.address")}</Address>
         </div>
       </Content>
     </Container>

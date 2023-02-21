@@ -4,9 +4,9 @@ import Reviews from "../components/reviews/Reviews";
 
 export default function Works () {
     return (
-        <Wrapper>
-                <Reviews />
-            <Footer />
+        <Wrapper reviews>
+            <Reviews />
+            <Footer reviews/>
         </Wrapper>
     );
 }

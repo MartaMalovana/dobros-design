@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     position: relative;
     margin-top: auto;
+    background-color: ${props => props.reviews === true && '#ffffff6e'};
 
     // &::before {
     //     content: '';

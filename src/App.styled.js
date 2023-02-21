@@ -38,6 +38,7 @@
 // }
 
 import styled from 'styled-components';
+import mak from './images/jpg/mak.jpg';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -45,8 +46,16 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   // justify-content: space-between;
-  min-height: 100vh;
+  min-height: Calc(100vh - 60px);
+
+  @media screen and (min-width: 768px) {
+    background-image: ${props => props.reviews && `url(${mak})`} ;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;  
+  }
 `;
+
 export const Content = styled.div`
   position: relative;
   display: ${props => props.contacts && "flex"};
@@ -63,7 +72,6 @@ export const Content = styled.div`
     max-width: 768px;
     position: ${props => props.tablet && "relative"};
     min-height: ${props => props.empty ? "750px" : "auto"};
-
   }
 
   @media screen and (min-width: 1000px) {

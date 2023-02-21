@@ -1,11 +1,11 @@
-import {t} from 'i18next'; 
+import { t } from 'i18next';
 import { Content } from "../../App.styled";
-import {Container, FooterBox, Phone, Email, Copyright} from "./Footer.styled";
+import { Container, FooterBox, Phone, Email, Copyright } from "./Footer.styled";
 import DecorLine from "../decor/DecorLine";
 
-export default function Footer () {
+export default function Footer({ reviews }) {
     return (
-        <Container>
+        <Container reviews={reviews}>
             <DecorLine />
             <Content>
                 <FooterBox>
