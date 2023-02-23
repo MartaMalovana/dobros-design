@@ -4,14 +4,7 @@ export const Container = styled.div`
     position: relative;
     margin-top: auto;
     background-color: ${props => props.reviews === true && '#ffffff6e'};
-
-    // &::before {
-    //     content: '';
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 2px;
-    //     background-color: black;
-    // }
+    background-color: ${props => props.contacts === true && '#ffffff6e'};
 `;
 
 export const FooterBox = styled.div`
@@ -23,9 +16,7 @@ export const FooterBox = styled.div`
     @media screen and (min-width: 768px) {
         position: relative;
         flex-direction: row;
-        // justify-content: space-around;
         padding-bottom: 50px;
-
     }
 
     @media screen and (min-width: 1000px) {
@@ -33,7 +24,6 @@ export const FooterBox = styled.div`
         padding-bottom: 70px;
         margin: 0 20px;
     }    
-
 `;
 
 export const Phone = styled.a`
@@ -74,7 +64,6 @@ export const Email = styled.a`
     @media screen and (min-width: 768px) {
         margin-left: auto;
     }
-
 `;
 
 export const Copyright = styled.p`
@@ -91,7 +80,6 @@ export const Copyright = styled.p`
     @media screen and (min-width: 1000px) {
         font-size: 18px;
     }    
-
 `;
 
 

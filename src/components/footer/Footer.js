@@ -3,9 +3,9 @@ import { Content } from "../../App.styled";
 import { Container, FooterBox, Phone, Email, Copyright } from "./Footer.styled";
 import DecorLine from "../decor/DecorLine";
 
-export default function Footer({ reviews }) {
+export default function Footer({ reviews, contacts }) {
     return (
-        <Container reviews={reviews}>
+        <Container reviews={reviews} contacts={contacts}>
             <DecorLine />
             <Content>
                 <FooterBox>

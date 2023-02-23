@@ -22,17 +22,13 @@ export default function ContactPage() {
       <Content contacts>
         <div>
           <Socials>
-            <Social>
-              <P>Facebook: </P>
-              <a href="https://www.facebook.com/dobrosdesignlviv">
+            <Social href="https://www.facebook.com/dobrosdesignlviv">
+                <P>Facebook: </P>
                 <Facebook />
-              </a>
             </Social>
-            <Social>
-              <P>Instagram: </P>
-              <a href="https://www.instagram.com/dobros_design/">
+            <Social href="https://www.instagram.com/dobros_design/">
+                <P>Instagram: </P>
                 <Instagram />
-              </a>
             </Social>
           </Socials>
           <Phones>

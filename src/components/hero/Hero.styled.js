@@ -1,14 +1,7 @@
 import styled from 'styled-components';
-import hero from '../../images/jpg/hero.jpg';
-import heroTablet from '../../images/jpg/hero-tablet.jpg';
-import heroDesktop from '../../images/jpg/hero-desktop.jpg';
 import logo from '../../images/jpg/logo.jpg';
 
-export const Container = styled.div`
-    // background-color: black;
-    // background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.8), rgba(255,215,0.3));
-
-`;
+export const Container = styled.div``;
 
 export const HeroBox = styled.section`
     position: relative;
@@ -21,7 +14,6 @@ export const HeroBox = styled.section`
     @media screen and (min-width: 1000px) {
         padding: 0;
         margin-top: 0px;
-
     }
 `;
 
@@ -43,13 +35,12 @@ export const LogoHero = styled.div`
     @media screen and (min-width: 1000px) {
         display: block;
     }
-
 `;
 
 export const Text = styled.p`
     position: absolute;
     right: 15px;
-    top: 5px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
@@ -68,7 +59,7 @@ export const Text = styled.p`
         letter-spacing: 8px;
 
         &.visible {
-            top: -38px;
+            top: -30px;
             opacity: 1;
         }  
     }
@@ -126,52 +117,27 @@ export const Title = styled.h1`
         padding: 5px 20px;
 
         &.visible {
-            top: 520px;
+            top: 500px;
             opacity: 1;
         }
     }    
 `;
 
-export const Photo = styled.div`
+export const Photo = styled.img`
     width: 100%;
-    height: 280px;
     margin: 20px 0 10px;
-    background-image: url(${hero});
     background-color: rgb(250,70,22);
+    object-fit: contain;
 
     @media screen and (min-width: 768px) {
-        width: 100%;
-        height: 500px;
-        background-image: url(${heroTablet});
         background-repeat: no-repeat;
-        background-position: 0 -60px;
       }
 
     @media screen and (min-width: 1000px) {
-        background-image: url(${heroDesktop});
         margin-top: 0;
-        height: 700px;
         background-size: cover;
-        background-position:  0 -200px;
     }
-
 `;
-
-// export const Button = styled.button`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 150px;
-//     height: 50px;
-//     margin: 10px auto;
-//     padding: 10px 20px;
-//     background-image: url(${photo});
-//     background-position: 50% 50%;
-//     background-repeat: no-repeat;
-//     border: 0px;
-//     box-shadow:  rgba(0, 0, 0, 0.35) 0px 5px 15px;;
-// `;
-
 
 export const Span = styled.div`
     padding: 5px 5px;
@@ -183,34 +149,33 @@ export const Span = styled.div`
 export const About = styled.p`
     text-align: center;
     margin: 10px 0 10px;
+
     @media screen and (min-width: 1000px) {
         font-size: 25px;
         margin: 20px 10px 40px;
         margin-bottom: 40px;
     }    
-
 `;
 
 export const ProposesTitle = styled.h2`
-    // font-weight: 400;
     font-weight: 700;
     text-align: center;
     margin: 20px 0 0;
+
     @media screen and (min-width: 1000px) {
         font-size: 35px;
         margin: 25px 0 0;
     }    
-
 `;
 
 export const ProposesList = styled.ul`
     margin: 10px 0 20px;
     padding: 0;
+
     @media screen and (min-width: 1000px) {
         font-size: 25px;
         margin-bottom: 40px;
     }    
-
 `;
 
 export const Propose = styled.li`
@@ -221,48 +186,20 @@ export const Propose = styled.li`
     &:focus {
         z-index: 1000;
     }
-
-    // &::before {
-    //     content: '';
-    //     position: absolute;
-    //     width: 5px;
-    //     height: 5px;
-    //     background-color: black;
-    //     transform: rotate(45deg) translate(-50%, -50%);
-    //     top: 11px;
-    //     left: -15px;
-
-    //     @media screen and (min-width: 1000px) {
-    //         margin-bottom: 20px;
-    //         width: 7px;
-    //         height: 7px;
-    //         left: -17px;
-    //         top: 17px;
-
-    //     }    
-    
-    }
-    @media screen and (min-width: 1000px) {
-        // border-bottom: 1px solid black;
-        // background-color: orange;
-    }
-
 `;
 
 export const P = styled.p`
     margin-bottom: 15px;
     text-align: center;
+
     @media screen and (min-width: 1000px) {
         margin-bottom: 20px;
         font-size: 25px;
-
     }    
-
 `;
 
 export const ProposeContainer = styled.div`
     position: relative;
-    // outline: 1px solid red;
 `;
 
 export const ProposePhoto = styled.img`
@@ -273,6 +210,7 @@ export const ProposePhoto = styled.img`
     border-radius: 50%;
     margin: 20px auto;
     transition-duration: 500ms;
+
     &:hover {
         z-index: 1000;
         transform: scale(2);
@@ -286,7 +224,6 @@ export const ProposePhoto = styled.img`
 
 export const ProposeText = styled.p`
     position: absolute;
-    // right: 0;
     bottom: 10px;
     width: Calc(100% - 30px);
     padding: 0 15px;
@@ -302,7 +239,6 @@ export const ProposeText = styled.p`
         bottom: 50%;
         transform: translateY(50%);
     }
-
 `;
 
 export const OrderTitle = styled(P)`
@@ -332,5 +268,4 @@ export const OrderText = styled(P)`
 
     @media screen and (min-width: 1000px) {
     } 
-
 `;

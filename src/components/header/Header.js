@@ -23,7 +23,7 @@ export default function Header() {
     };
 
     return (
-        <Container reviews={location.pathname === '/works'}>
+        <Container reviews={location.pathname}>
             <Content>
                 <HeaderBox desktop={location.pathname === '/' && "desktop"}>
                     <NavLink to="/"><Logo src={logo} /></NavLink>

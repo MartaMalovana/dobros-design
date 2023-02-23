@@ -56,6 +56,7 @@ export default function ShowProduct() {
   const [menu, setMenu] = useState(true);
   const [renderData, setRenderData] = useState(null);
   const [find, setFind] = useState(false);
+  const [sectionTitle, setSectionTitle] = useState(false);
   const [subsectionTitle, setSubsectionTitle] = useState(false);
   const [slide, setSlide] = useState(0);
   const {t} = useTranslation();
@@ -80,12 +81,6 @@ export default function ShowProduct() {
   const showSlider = useSelector(slider);
   const dispatch = useDispatch();
 
-  // useEffect(()=>{
-  //   if(categoryTitle === 'Буковина') {
-  //     setCategoryTitle('Bukovina reg')
-  //   }
-  // },[categoryTitle]);
-
   const hideNavigation = () => {
     setMenu(!menu);
   };
@@ -99,83 +94,101 @@ export default function ShowProduct() {
     setFind(false);
     setMenu(false);
     // Get the name of chosen category in product menu
-    console.log(name);
     const choosenRegion = name;
-    //
+    
     switch (choosenRegion) {
       case "bukovyna":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(bukovynaData);
         break;
       case "centralna":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(centralnaData);
         break;
       case "centralna-children":
         setSubsectionTitle(true);
+        setSectionTitle(true);
         setRenderData(centralnaChildrenData);
         break;
       case "stylizovanaCentralna":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(stylizovanaCentralnaData);
         break;
       case "stylizovanaCentralna-children":
         setSubsectionTitle(true);
+        setSectionTitle(true);
         setRenderData(stylizovanaCentralnaChildrenData);
         break;
       case "hutsulshchyna":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(hutsulshchynaData);
         break;
       case "opillya":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(opillyaData);
         break;
       case "volyn":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(volynData);
         break;
       case "zakarpattya":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(zakarpattyaData);
         break;
       case "podillya":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(podillyaData);
         break;
       case "svit":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(svitData);
         break;
       case "golovni-ubory":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(golovniUboryData);
         break;
       case "vzuttya":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(vzuttyaData);
         break;
       case "rushnyky":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(rushnykyData);
         break;
       case "kozhuhy":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(kozhuhyData);
         break;
       case "rizne":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(rizneData);
         break;
       case "saved":
         setSubsectionTitle(false);
+        setSectionTitle(true);
         setRenderData(savedData);
         break;
       default:
         setSubsectionTitle(false);
+        setSectionTitle(false);
         setRenderData(null);
         break;
-    }
+    };
+    
     window.scrollTo({top: 0, left: 0, "behavior": "smooth"});
   };
 
@@ -205,6 +218,12 @@ export default function ShowProduct() {
   const showProductsByNumber = (data) => {
     setRenderData(data);
   };
+
+  const hideTitles = () => {
+    setSectionTitle(false);
+    setSubsectionTitle(false);
+  };
+
   return (
     <Container>
       <Content empty tablet>
@@ -269,7 +288,7 @@ export default function ShowProduct() {
             </ProductList>
           </Navigation>
           <CardContainer>
-            {find && <FindProduct newData={showProductsByNumber} />}
+            {find && <FindProduct newData={showProductsByNumber} titles={hideTitles}/>}
             {renderData && renderData.length > 0 && <DescriptionHeart>
               {i18next.language === 'ua' 
             ? 'Вироби, які Вам сподобаються, можна зберегти, натиснувши на сердечко ' 
@@ -279,8 +298,8 @@ export default function ShowProduct() {
             ? ', і згодом переглянути у розділі "Збережене"'
             : '. Later You can find the selected items in "Saved" section'}
               </DescriptionHeart>}
-            {renderData && renderData.length > 0 && <Title>{i18next.language === 'ua' ? renderData[0].categoryUkr : renderData[0].categoryEng}</Title>}
-            {renderData && renderData.length > 0 && renderData[0].children && <Title>{i18next.language === 'ua' ? 'для дітей' : 'for children'}</Title>}
+            {sectionTitle && renderData && renderData.length > 0 && <Title>{i18next.language === 'ua' ? renderData[0].categoryUkr : renderData[0].categoryEng}</Title>}
+            {subsectionTitle && <Title>{i18next.language === 'ua' ? 'для дітей' : 'for children'}</Title>}
             {renderData && renderData.length > 0 &&
               renderData.map((el, index) => (
                 <ProductCard

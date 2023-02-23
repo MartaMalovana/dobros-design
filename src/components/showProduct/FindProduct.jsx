@@ -31,7 +31,7 @@ import sliderActions from "../../redux/slider/slider-actions";
 // import { allProducts } from '../../redux/saved/saved.selectors';
 import regions from "./regions.json";
 
-export default function FindProduct({ newData }) {
+export default function FindProduct({ newData, titles }) {
   const [renderData, setRenderData] = useState(null);
   const [slide, setSlide] = useState(0);
   const [notFound, setNotFound] = useState(false);
@@ -48,10 +48,12 @@ export default function FindProduct({ newData }) {
     // setRenderData(products);
     if (products && products.length > 0) {
       newData(products);
+      // Hide titles
+      titles();
     } else {
       setNotFound(true);
       newData(null);
-    }
+    };
   };
 
   return (

@@ -6,6 +6,7 @@ import viber from '../../images/svg/viber.svg';
 export const Container = styled.div`
     display: flex;
     flex-grow: 1;
+    padding: 30px 0;
 `;
 
 export const Contacts = styled.div`
@@ -17,10 +18,9 @@ export const Contacts = styled.div`
 `;
 
 export const Socials = styled.div`
-    // display: flex;
 `;
 
-export const Social = styled.div`
+export const Social = styled.a`
     display: flex;
     margin: 10px auto;
     width: fit-content;
@@ -29,47 +29,43 @@ export const Social = styled.div`
     @media screen and (min-width: 768px) {
         margin: 15px auto; 
     }
-
 `;
 
 export const Facebook = styled.div`
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     background-image: url(${facebook});
-    @media screen and (min-width: 768px) {
-        width: 30px;
-        height: 30px;
-    }    
 `;
 
-export const Instagram = styled.div`
-    width: 20px;
-    height: 20px;
+export const Instagram = styled(Facebook)`
     background-image: url(${instagram});
-    @media screen and (min-width: 768px) {
-        width: 30px;
-        height: 30px;
-    }    
-
 `;
 
 export const P = styled.p`
     margin: 0 15px 0px 0;
     font-size: 16px;
     width: 80px;
-    @media screen and (min-width: 768px) {
-        width: 100px;
-        font-size: 20px;
-    }    
+    color: white;
+    font-weight: bold;
     
+    &:hover {
+        color: rgb(250,70,22);
+    }
+
+    @media screen and (min-width: 768px) {
+        width: auto;
+        font-size: 20px;
+    }     
 `;
 
 export const Phones = styled.div`
-    margin-top: 30px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    
     @media screen and (min-width: 768px) {
-        // display: flex;
-        margin-top: 40px;
+        margin-top: 30px;
     }
 `;
 
@@ -78,8 +74,9 @@ export const Phone = styled.a`
     display: ${props => props.main ? "block" : "inline-block"};;
     margin: ${props => props.main ? "10px 15px" : "0"};
     text-align: ${props => props.main ? "center" : "justify"};
-    color: black;
     text-decoration: underline;
+    color: white;
+    font-weight: bold;
 
     &:hover {
         color: rgb(250,70,22);
@@ -87,14 +84,13 @@ export const Phone = styled.a`
 
     @media screen and (min-width: 768px) {
         font-size: 20px;
-    }    
-    
+    }        
 `;
 
 export const Viber = styled.div`
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: -30px;
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
@@ -102,27 +98,29 @@ export const Viber = styled.div`
     background-size: contain;
 
     @media screen and (min-width: 768px) {
-        right: 20px;
+        // right: 0px;
     }    
-
 `;
 
 export const Email = styled(Phone)`
-    margin-top: 30px;
+    margin-top: 20px;
+    color: white;
+    font-weight: bold;
+
     @media screen and (min-width: 768px) {
-        margin-top: 40px;
+        margin-top: 30px;
         font-size: 20px;
-    }    
-    
+    }     
 `;
 
 export const Address = styled.p`
     text-align: center;
     margin-top: 30px;
+    color: white;
+    font-weight: bold;
 
     @media screen and (min-width: 768px) {
         margin-top: 40px;
         font-size: 20px;
-    }    
-    
+    }     
 `;

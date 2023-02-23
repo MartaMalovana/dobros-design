@@ -4,9 +4,9 @@ import ContactPage from '../components/contactPage/ContactPage.jsx';
 
 export default function Contacts () {
     return (
-        <Wrapper>
+        <Wrapper contacts>
             <ContactPage />
-            <Footer />
+            <Footer contacts/>
         </Wrapper>
     );
 }

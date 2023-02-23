@@ -8,22 +8,13 @@ export const Container = styled.div`
 export const List = styled.ul`
     padding: 0;
     margin: 20px 15px;
-
-    @media screen and (min-width: 768px) {
-        // display: grid;
-        // grid-template-columns: repeat(5, 1fr);
-        // grid-auto-rows: minmax(50px, auto);
-        // grid-gap: 10px;
-    };
-
 `;
 
 export const Review = styled.li`
-
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 
     @media screen and (min-width: 768px) {
-        // margin-bottom: 0px;
+        margin-bottom: 50px;
         grid-column: ${props => props.column};
         grid-row: ${props => props.row};
     };
@@ -40,7 +31,6 @@ export const ReviewPhoto = styled.img`
     transition-property: position;
     transition-duration: 300ms;
     position: static;
-
 `;
 
 export const ReviewTitle = styled.p`

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useInView } from 'react-intersection-observer';
 import { useTranslation } from 'react-i18next';
 import i18next from "i18next";
@@ -23,7 +23,6 @@ import {
     OrderText
 } from './Hero.styled';
 import { Phone } from "../contactPage/ContactPage.styled";
-import photo1 from '../../images/jpg/hero.jpg';
 import DecorLine from "../decor/DecorLine";
 import RenderMenuList from "../header/RenderMenuList";
 import proposes from './proposes.json';
@@ -48,7 +47,18 @@ export default function Hero({ desktop }) {
                     <LanguageBox home />
                     <RenderMenuList tablet desktop={desktop} />
                     <Text className={inView && 'visible'}>{t('hero.title')}</Text>
-                    <div ref={ref}><Photo /></div>
+                    <div ref={ref}>
+                        <Photo
+                            srcSet={`
+                                ${require(`../../images/jpg/hero.jpg`)} 400w,
+                                ${require(`../../images/jpg/hero-tablet.jpg`)} 799w,
+                                ${require(`../../images/jpg/hero-desktop.jpg`)} 997w
+                            `}
+                            sizes="100%"
+                            src={require(`../../images/jpg/hero-desktop.jpg`)
+                            } 
+                        />
+                    </div>
                     <Title className={inView && "visible"}><DecorLine desktop />DOBROS - DESIGN<DecorLine desktop /></Title>
                     <About>{t('hero.about1')}</About>
                     <About>{t('hero.about2')}</About>

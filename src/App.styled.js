@@ -1,58 +1,24 @@
-// .App {
-//   text-align: center;
-// }
-
-// .App-logo {
-//   height: 40vmin;
-//   pointer-events: none;
-// }
-
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
-
-// .App-header {
-//   background-color: #282c34;
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: white;
-// }
-
-// .App-link {
-//   color: #61dafb;
-// }
-
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
-
 import styled from 'styled-components';
 import mak from './images/jpg/mak.jpg';
+import karpaty from "./images/jpg/karpaty.jpg";
+import karpatySmall from "./images/jpg/karpaty-small.jpg";
 
 export const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   min-height: Calc(100vh - 60px);
-
+  background-image: ${props => props.contacts ? `url(${karpatySmall})` : 'none'} ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
   @media screen and (min-width: 768px) {
     background-image: ${props => props.reviews && `url(${mak})`} ;
-    background-size: cover;
+    background-image: ${props => props.contacts && `url(${karpaty})`} ;
     background-attachment: fixed;
     background-repeat: no-repeat;  
+    background-size: cover;
   }
 `;
 
@@ -64,7 +30,6 @@ export const Content = styled.div`
   max-width: 400px;
   min-height: ${props => props.empty ? "660px" : "auto"};
   margin: 0 auto;
-  // outline: 1px solid red;
   font-family: 'Montserrat'; 
   overflow: hidden;
 
@@ -76,8 +41,6 @@ export const Content = styled.div`
 
   @media screen and (min-width: 1000px) {
     max-width: 1440px;
-    // padding-left: 30px;
-    // padding-right: 30px;
     min-height: ${props => props.empty ? "870px" : "auto"};
   }
 `;

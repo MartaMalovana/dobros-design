@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import {NavLink} from 'react-router-dom';
 import { Wrapper } from "../App.styled";
 import Footer from "../components/footer/Footer";
 import { Content } from "../App.styled";
 import {
   CardContainer,
   Container,
+  NoSaved
 } from "../components/showProduct/ShowProduct.styled";
 import ProductCard from "../components/productCard/ProductCard";
 import { saved } from "../redux/saved/saved.selectors";
@@ -32,12 +34,25 @@ export default function Saved() {
     setSlide(index);
   };
 
+  const removeActivePage = () => {
+    document.querySelector(".activePage").classList.remove("activePage")
+  };
+
   return (
     <Wrapper>
       <Container>
         <Content empty>
           <CardContainer desktop>
-            {data &&
+            {data.length === 0 && 
+              <NoSaved>
+                <p>Збереженої продукції поки що немає.</p>
+                <p>Запрошуємо до розділу 
+                  <NavLink to={'/products'}>
+                    <span onClick={removeActivePage}> "Продукція"</span>
+                  </NavLink>
+                </p>
+              </NoSaved>}
+            {data.length > 0 &&
               data.map((el, index) => (
                 <ProductCard
                   key={el.id}
