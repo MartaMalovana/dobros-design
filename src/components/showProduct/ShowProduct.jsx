@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 import { Content } from "../../App.styled";
 import {
   Container,
@@ -39,8 +40,6 @@ import { saved } from "../../redux/saved/saved.selectors";
 import { slider } from "../../redux/slider/slider-selectors";
 import { svit } from "../../redux/svit/svit-selectors";
 import sliderActions from "../../redux/slider/slider-actions";
-import { useEffect } from "react";
-import { render } from "@testing-library/react";
 import { podillya } from "../../redux/podillya/podillya-selectors";
 import { golovniUbory } from "../../redux/golovni-ubory/golovni-selectors";
 import { rushnyky } from "../../redux/rushnyky/rushnyky-selectors";
@@ -49,8 +48,6 @@ import { kozhuhy } from "../../redux/kozhuhy/kozhuhy-selectors";
 import {rizne} from "../../redux/rizne/rizne-selectors";
 import whiteHeart from '../../images/svg/heart.svg';
 import DecorLine from '../decor/DecorLine';
-import i18next from "i18next";
-// import { t } from "i18next";
 
 export default function ShowProduct() {
   const [menu, setMenu] = useState(true);
@@ -195,11 +192,15 @@ export default function ShowProduct() {
   const showSaved = () => {
     setRenderData(savedData);
     setFind(false);
+    setSectionTitle(false);
+    setSubsectionTitle(false);
   };
 
   const findProduct = () => {
     setRenderData(null);
     setFind(true);
+    setSectionTitle(false);
+    setSubsectionTitle(false);
     window.scrollTo({top: 0, left: 0, "behavior": "smooth"});
   };
 
@@ -293,7 +294,7 @@ export default function ShowProduct() {
               {i18next.language === 'ua' 
             ? 'Вироби, які Вам сподобаються, можна зберегти, натиснувши на сердечко ' 
             : 'You can save items by clicking the heart button '}
-            <img src={whiteHeart} width="12px"/> 
+            <img src={whiteHeart} width="12px" alt="heart"/> 
             {i18next.language === 'ua' 
             ? ', і згодом переглянути у розділі "Збережене"'
             : '. Later You can find the selected items in "Saved" section'}

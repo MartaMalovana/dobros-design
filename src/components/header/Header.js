@@ -26,7 +26,7 @@ export default function Header() {
         <Container reviews={location.pathname}>
             <Content>
                 <HeaderBox desktop={location.pathname === '/' && "desktop"}>
-                    <NavLink to="/"><Logo src={logo} /></NavLink>
+                    <NavLink to="/"><Logo src={logo} alt="company logo, letter d"/></NavLink>
                     <LanguageBox />
                     <BurgerButton onClick={openMenu}><Burger /></BurgerButton>
                     {menu &&

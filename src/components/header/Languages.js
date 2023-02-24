@@ -3,7 +3,7 @@ import { Languages, LangButton } from "./Header.styled";
 
 export default function LanguageBox ({home}) {
     
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
 
     const lngs = {
         ua: { nativeName: 'УКР' },

@@ -29,10 +29,10 @@ import proposes from './proposes.json';
 import LanguageBox from "../header/Languages";
 
 export default function Hero({ desktop }) {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const [showInfo, setShowInfo] = useState(false);
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
         root: null,
         rootMargin: '0px',
         threshold: 0,
@@ -57,6 +57,7 @@ export default function Hero({ desktop }) {
                             sizes="100%"
                             src={require(`../../images/jpg/hero-desktop.jpg`)
                             } 
+                            alt="Smiling girls in folk costumes on the stage"
                         />
                     </div>
                     <Title className={inView && "visible"}><DecorLine desktop />DOBROS - DESIGN<DecorLine desktop /></Title>
@@ -68,7 +69,7 @@ export default function Hero({ desktop }) {
                             <Propose key={el.id}>
                                 <ProposeContainer>
                                     <ProposeText>{i18next.language === 'ua' ? el.text : el.textEng}</ProposeText>
-                                    <ProposePhoto src={require(`../../images/jpg/proposes/${el.photo}`)} />
+                                    <ProposePhoto src={require(`../../images/jpg/proposes/${el.photo}`)} alt="photo of products created by company"/>
                                 </ProposeContainer>
                             </Propose>
                         )}

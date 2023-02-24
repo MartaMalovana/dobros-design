@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import {
@@ -12,31 +12,19 @@ import {
   LabelSelect,
   Input,
   ButtonSubmit,
-  Result,
   Underline,
 } from "./FindProduct.styled";
 import {
-  CardContainer,
-  Card,
-  Product,
-  ProductRegion,
-  Heart,
+  CardContainer
 } from "./ShowProduct.styled";
 import getRegionData from "./getRegionData";
-import saveProduct from "./saveProduct";
 import ProductCard from "../productCard/ProductCard";
-import { useEffect } from "react";
-import { slider } from "../../redux/slider/slider-selectors";
-import sliderActions from "../../redux/slider/slider-actions";
-// import { allProducts } from '../../redux/saved/saved.selectors';
 import regions from "./regions.json";
 
 export default function FindProduct({ newData, titles }) {
   const [renderData, setRenderData] = useState(null);
-  const [slide, setSlide] = useState(0);
   const [notFound, setNotFound] = useState(false);
   const allstate = useSelector((state) => state);
-  const showSlider = useSelector(slider);
   const { t } = useTranslation();
 
   const find = (e) => {

@@ -267,7 +267,7 @@ export const CardContainer = styled.div`
    margin: 15px;
 
    @media screen and (min-width: 768px) {
-        width: ${props => props.desktop ? '750px' : '570px'};
+        width: ${props => props.desktop ? '750px' : '500px'};
         margin: 30px auto;
         justify-content: ${props => props.desktop && "flex-start"};
     }
@@ -408,9 +408,24 @@ export const MenuDecor = styled.div`
 `;
 
 export const NoSaved = styled.div`
-    margin: 30px auto;
+    margin: 50px auto 20px;
+    font-size: 18px;
 
-    span {
-        color: red;
+    @media screen and (min-width: 1000px) {
+        font-size: 22px;
     }
+
+    p {
+        margin: 20px;
+        text-align: center;
+    }
+
+    NavLink {
+        text-align: center;
+        text-decoration: underline;
+    }
+`;
+
+export const Span1 = styled.span`
+    color: red;
 `;

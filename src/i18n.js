@@ -72,9 +72,19 @@ i18n
                     footer: {
                         rights: 'Уся продукція захищена авторським правом'
                     },
+                    saved: {
+                        paragraph1: 'Збереженої продукції поки що немає.',
+                        paragraph2: 'Запрошуємо до розділу',
+                        span1: ' "Продукція"',
+                        span2: ''
+                    },
                     contacts: {
                         address: 'вул.М.Хвильового 12, Львів, Україна',
                         end: 'є'
+                    },
+                    notFound: {
+                        text: 'Такої сторінки не існує.',
+                        goToMain: 'Перейти до головної сторінки'
                     }
                 }
             },
@@ -137,9 +147,19 @@ i18n
                     footer: {
                         rights: 'All rights reserved'
                     },
+                    saved: {
+                        paragraph1: 'No saved products yet.',
+                        paragraph2: 'Welcome to',
+                        span1: ' "Products"',
+                        span2: 'section'
+                    },
                     contacts: {
                         address: 'Khvylovoho 12 str., Lviv, Ukraine',
                         end: '+'
+                    },
+                    notFound: {
+                        text: 'Page not found.',
+                        goToMain: 'Go to our main page'
                     }
                 }
             }

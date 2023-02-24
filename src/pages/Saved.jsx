@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {NavLink} from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import { Wrapper } from "../App.styled";
 import Footer from "../components/footer/Footer";
 import { Content } from "../App.styled";
 import {
   CardContainer,
   Container,
-  NoSaved
+  NoSaved,
+  Span1
 } from "../components/showProduct/ShowProduct.styled";
 import ProductCard from "../components/productCard/ProductCard";
 import { saved } from "../redux/saved/saved.selectors";
@@ -21,7 +23,7 @@ export default function Saved() {
   const dispatch = useDispatch();
   const [data, setData] = useState(savedData);
   const [slide, setSlide] = useState(0);
-
+  const {t} = useTranslation();
   const closeSlider = () => {
     dispatch(sliderActions.sliderToggle());
   };
@@ -45,11 +47,12 @@ export default function Saved() {
           <CardContainer desktop>
             {data.length === 0 && 
               <NoSaved>
-                <p>Збереженої продукції поки що немає.</p>
-                <p>Запрошуємо до розділу 
+                <p>{t('saved.paragraph1')}</p>
+                <p>{t('saved.paragraph2')} 
                   <NavLink to={'/products'}>
-                    <span onClick={removeActivePage}> "Продукція"</span>
+                    <Span1 onClick={removeActivePage}>{t('saved.span1')}</Span1>
                   </NavLink>
+                  <span> {t('saved.span2')}</span>
                 </p>
               </NoSaved>}
             {data.length > 0 &&

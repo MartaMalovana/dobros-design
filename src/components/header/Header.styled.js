@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
-import heart from '../../images/svg/heart.svg';
 import close from '../../images/svg/close1.svg';
 
 export const Container = styled.div`

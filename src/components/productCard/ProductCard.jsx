@@ -18,7 +18,6 @@ import savedActions from "../../redux/saved/saved-actions";
 export default function ProductCard({
   data,
   title,
-  slider,
   index,
   slide,
   changeCurrentSlide,
@@ -29,8 +28,6 @@ export default function ProductCard({
   const dispatch = useDispatch();
   const allstate = useSelector((state) => state);
   const { ref, inView } = useInView({
-    // root: null,
-    // rootMargin: '0px',
     threshold: 0.1,
     triggerOnce: true,
   });
@@ -83,13 +80,14 @@ export default function ProductCard({
               src={require(`../../images/jpg/costumes/${
                 sliderSize ? renderData.photo : renderData.preview
               }`)}
+              alt="Photo of the company's product"
             />
             <Heart
               onClick={save}
               className={renderData.saved === "true" && "red"}
               name={renderData.id}
               desktop={saved && "true"}
-              size={sliderSize}
+              size={sliderSize ? 'true' : 'false'}
             />
           </>
         ) : (

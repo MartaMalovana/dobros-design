@@ -1,4 +1,3 @@
-import i18next from "i18next";
 import { Content } from "../../App.styled";
 import reviewList from "./reviewList.json";
 import {
@@ -6,7 +5,6 @@ import {
   List,
   Review,
   ReviewPhoto,
-  ReviewTitle,
 } from "./Reviews.styled";
 
 export default function Reviews() {
@@ -23,6 +21,7 @@ export default function Reviews() {
                             `}
                 sizes="(min-width: 768px) 500px, 400px"
                 src={require(`../../images/jpg/reviews/large/${el.photo}`)}
+                alt="Client's photo in costume made by our company"
               />
               {/* <ReviewTitle>{i18next.language === 'ua' ? el.title : el.titleEng}</ReviewTitle> */}
             </Review>
